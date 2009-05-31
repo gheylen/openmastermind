@@ -1,4 +1,4 @@
-/*  openMastermind Copyright (c) 2008 Glenn Heylen and Bert Lemmens
+/*  openMastermind Copyright (c) 2008 Glenn Heylen
 
 	This file is part of openMastermind.
 
