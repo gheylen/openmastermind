@@ -1,4 +1,4 @@
-/*  openMastermind Copyright (c) 2008 Glenn Heylen and Bert Lemmens
+/*  openMastermind Copyright (c) 2008 Glenn Heylen
 
 	This file is part of openMastermind.
 
@@ -31,7 +31,7 @@ public class Main
 	{
 		//Database abstraction layers
 		MastermindDb db;
-		if(!new File(".mastermind.db").exists())
+		if(!new File("mastermind.db").exists())
 			db = MastermindDb.factory();
 		else
 			db = new MastermindDb();
