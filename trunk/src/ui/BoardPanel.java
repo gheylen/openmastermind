@@ -28,7 +28,7 @@ import javax.swing.JPanel;
 import core.Combination;
 import core.Mastermind;
 import java.awt.event.MouseListener;
-import lib.collections.CycleBag;
+import lib.collection.CycleBag;
 import lib.ext.JarImage;
 import enums.CombResultCode;
 import enums.MastermindStatus;
@@ -97,7 +97,7 @@ public class BoardPanel extends JPanel
     			mCurrCodeDrawn = true;
 			}
     		else
-    			mBufferedComb = Combination.getFilled(this._mastermind.getCodeLength(), (byte)0);
+    			mBufferedComb = Combination.factory(this._mastermind.getCodeLength(), (byte)0);
      		
 	    	//(3) Draw combination as a whole
 	    	this._drawCombination(g, mBufferedComb, i, mCurrCodeDrawn);

@@ -18,8 +18,8 @@
 import java.io.File;
 import java.sql.SQLException;
 import lib.ext.JarImage;
-import controllers.BoardController;
-import controllers.MastermindController;
+import controller.BoardController;
+import controller.MastermindController;
 import core.Mastermind;
 import core.db.MastermindDb;
 import ui.MastermindFrame;

@@ -15,68 +15,73 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package controllers;
+package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import lib.mvc.view.ImageButton;
-import ui.MastermindFrame;
+import ui.HighscoreFrame;
 import core.Mastermind;
 import enums.Difficulty;
-import enums.MastermindStatus;
 
-/****
-	* Mastermind Business Logic
-****/
-public class MastermindController
+
+public class HighscoreController
 {
 	private Mastermind _mastermind;
-	private MastermindFrame _view;
+	private HighscoreFrame _view;
 	
-	public MastermindController(Mastermind mastermind, MastermindFrame view)
+	public HighscoreController(Mastermind mastermind, HighscoreFrame view)
 	{
 		this._mastermind = mastermind;
 		this._view = view;
 		
-		this._view.addExitEvent(new ExitListener());
-		this._view.addChangeDifficultyEvent(new ChangeDifficultyListener());
+		view.addAndStartUxTimer(new UxTickListener());
+		view.addOkListener(new CloseListener());
+		view.addChangeDifficultyListener(new ChangeDifficultyListener());
 	}
 	
-	class ExitListener implements ActionListener
+
+	class UxTickListener implements ActionListener
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			System.exit(0);
+			_view.showNextRow();
+		}
+	}
+	class CloseListener implements ActionListener
+	{
+		public void actionPerformed(ActionEvent e)
+		{			
+			_view.dispose();
 		}
 	}
 	class ChangeDifficultyListener implements ActionListener
 	{
 		public void actionPerformed(ActionEvent e)
-		{
-			if(_mastermind.getStatus() == MastermindStatus.SHOWING_SCORE)
-				return;
-			
+		{			
 			if(((ImageButton)e.getSource()).getUniqueName() == "easy")
 			{
-				_view.setSizeFor(Difficulty.EASY);
-				_mastermind.restart(Difficulty.EASY);
+				_view.setScoresTo(_mastermind.getDb().getHighscores(Difficulty.EASY));
+				_view.adjustButtons(Difficulty.EASY);
 			}
 			else if(((ImageButton)e.getSource()).getUniqueName() == "medium")
 			{
-				_view.setSizeFor(Difficulty.MEDIUM);
-				_mastermind.restart(Difficulty.MEDIUM);
+				_view.setScoresTo(_mastermind.getDb().getHighscores(Difficulty.MEDIUM));
+				_view.adjustButtons(Difficulty.MEDIUM);
 			}
 			else if(((ImageButton)e.getSource()).getUniqueName() == "hard")
 			{
-				_view.setSizeFor(Difficulty.HARD);
-				_mastermind.restart(Difficulty.HARD);
+				_view.setScoresTo(_mastermind.getDb().getHighscores(Difficulty.HARD));
+				_view.adjustButtons(Difficulty.HARD);
 			}
 			else if (((ImageButton)e.getSource()).getUniqueName() == "impossible")
 			{
-				_view.setSizeFor(Difficulty.IMPOSSIBLE);
-				_mastermind.restart(Difficulty.IMPOSSIBLE);
+				_view.setScoresTo(_mastermind.getDb().getHighscores(Difficulty.IMPOSSIBLE));
+				_view.adjustButtons(Difficulty.IMPOSSIBLE);
 			}
 			
+			_view.setEverythingInvisible();
+			_view.startUxTimer();
 			_view.repaint();
 		}
 	}

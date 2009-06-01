@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package controllers;
+package controller;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;

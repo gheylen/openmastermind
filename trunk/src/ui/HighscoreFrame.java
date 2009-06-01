@@ -32,7 +32,7 @@ import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JLabel;
-import controllers.HighscoreController;
+import controller.HighscoreController;
 import core.Mastermind;
 import core.Score;
 import enums.Difficulty;

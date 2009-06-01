@@ -15,11 +15,18 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.collections;
+package lib.collection;
 
-public interface Bag
-{
-	public abstract void put(Object data);
-	public Object pop(long node);
-	public long getSize();
+import java.util.Random;
+
+/**
+ * Pops random nodes out of the bag
+ */
+public final class RandomBag extends AbstractBag
+{	
+	public Object pop()
+	{
+		Random mRand = new Random();		
+		return super.pop(mRand.nextInt() % this.getSize());
+	}
 }
