@@ -32,7 +32,7 @@ import lib.mvc.view.DraggableFrame;
 import lib.mvc.view.ImageButton;
 import lib.mvc.view.ImagePanel;
 import javax.swing.JLabel;
-import controllers.ScoreController;
+import controller.ScoreController;
 import core.Mastermind;
 
 public class ScoreFrame extends DraggableFrame

@@ -15,17 +15,13 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.collections;
+package lib.collection;
 
-import java.util.Random;
-
-public final class RandomBag extends AbstractBag
-{	
-	public Object pop()
-	{
-		Random mRand = new Random();
-		long mNode = mRand.nextLong() % this.getSize();
-		
-		return super.pop(mNode);
-	}
+public interface Bag
+{
+	public void push(Object node);
+	public abstract Object pop(int nodeId);
+	public int getSize();
+	public boolean drop(int nodeId);
+	public boolean contains(Object node);
 }

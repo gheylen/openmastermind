@@ -133,7 +133,7 @@ public final class Mastermind
 		if(Combination.analyzeResults(this._winningCombo.compareTo(this._combinations.get(this.getCommittedCombos() - 1)), this.getCodeLength()))
 			this.setStatus(MastermindStatus.WON);
 		else
-			this._currentCombo = Combination.getFilled(this._codeLength, (byte)1);
+			this._currentCombo = Combination.factory(this._codeLength, (byte)1);
 		
 		if(this._isFull())
 			this.setStatus(MastermindStatus.FULL);
@@ -143,7 +143,7 @@ public final class Mastermind
 		this._adjustDifficulty(difficulty);
 		this._combinations.clear();
 		this._winningCombo = Combination.getRandom(this._codeLength, this._colorsCount, this._allowDoubleColorsInCode);
-		this._currentCombo = Combination.getFilled(this._codeLength, (byte)1);
+		this._currentCombo = Combination.factory(this._codeLength, (byte)1);
 		this._startTime = new Date();
 		this.setStatus(MastermindStatus.PLAYING);
 	}

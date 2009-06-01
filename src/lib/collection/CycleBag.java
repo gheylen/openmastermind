@@ -15,11 +15,14 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.collections;
+package lib.collection;
 
+/**
+ * Cycles through the bag without deleting the nodes on pop. (Similar to a queue, but leaves nodes untouched on pop)
+ */
 public final class CycleBag extends AbstractBag
 {
-	private long _curId;
+	private int _curId;
 	
 	public CycleBag()
 	{

@@ -19,7 +19,7 @@ package core;
 
 import java.util.HashSet;
 import java.util.Random;
-import lib.collections.CycleBag;
+import lib.collection.CycleBag;
 import enums.CombResultCode;
 
 /****
@@ -47,6 +47,17 @@ public class Combination
 		this._pegs[id] = value;
 	}
 
+	public void cyclePeg(byte pegId, byte maxColors)
+	{
+		if(pegId >= this._pegs.length)
+			return;
+		
+		byte mPeg = this.getPeg(pegId);
+		if(mPeg >= maxColors)
+			this.setPeg(pegId, (byte)1);
+		else
+			this.setPeg(pegId, (byte)(mPeg + 1));
+	}
 	public CycleBag compareTo(Combination combination)
 	{
 		if(combination == null)
@@ -63,7 +74,7 @@ public class Combination
 		for(byte i = 0; i < this.getLength(); i++)
 			if(this.getPeg(i) == combination.getPeg(i))
 			{
-				mResults.put(CombResultCode.CORRECT);
+				mResults.push(CombResultCode.CORRECT);
 				mFlaggedComboData.add(i);
 				mFlaggedWinningData.add(i);
 			}
@@ -80,7 +91,7 @@ public class Combination
 					if(mFlaggedWinningData.contains(j))
 						continue;
 					
-					mResults.put(CombResultCode.FOUND);
+					mResults.push(CombResultCode.FOUND);
 					mFlaggedWinningData.add(j);
 					break;
 				}
@@ -89,7 +100,7 @@ public class Combination
 		return mResults;
 	}
 	
-	public static Combination getFilled(byte length, byte value)
+	public static Combination factory(byte length, byte value)
 	{
 		byte[] mPegs = new byte[length];
 		for(byte i = 0; i < length; i++)
@@ -115,7 +126,7 @@ public class Combination
 		byte[] mPegs = new byte[length];
 		byte mPeg;
 		
-		for(int i = 0; i < length; i ++)
+		for(int i = 0; i < length; i++)
 		{
 			do
 			{
