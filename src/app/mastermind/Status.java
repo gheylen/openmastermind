@@ -15,11 +15,13 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package enums;
+package app.mastermind;
 
-public enum CombResultCode
+public enum Status
 {
-	CORRECT,
-	FOUND,
-	EMPTY
+	PLAYING,
+	WON,
+	FULL,
+	ERROR,
+	SHOWING_SCORE
 }

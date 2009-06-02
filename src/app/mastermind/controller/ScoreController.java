@@ -15,18 +15,18 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package controller;
+package app.mastermind.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import app.mastermind.Difficulty;
+import app.mastermind.Status;
+import app.mastermind.model.Mastermind;
+import app.mastermind.model.Score;
+import app.mastermind.view.HighscoreFrame;
+import app.mastermind.view.ScoreFrame;
 import lib.component.ImageButton;
-import ui.HighscoreFrame;
-import ui.ScoreFrame;
-import core.Mastermind;
-import core.Score;
-import enums.Difficulty;
-import enums.MastermindStatus;
 
 
 public class ScoreController
@@ -51,7 +51,7 @@ public class ScoreController
 		{
 			if(((ImageButton)e.getSource()).getUniqueName() == "ok")
 			{
-				_mastermind.setStatus(MastermindStatus.WON);
+				_mastermind.setStatus(Status.WON);
 				_view.dispose();
 			}
 			else

@@ -15,15 +15,15 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package controller;
+package app.mastermind.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import app.mastermind.Difficulty;
+import app.mastermind.Status;
+import app.mastermind.model.Mastermind;
+import app.mastermind.view.MastermindFrame;
 import lib.component.ImageButton;
-import ui.MastermindFrame;
-import core.Mastermind;
-import enums.Difficulty;
-import enums.MastermindStatus;
 
 /****
 	* Mastermind Business Logic
@@ -53,7 +53,7 @@ public class MastermindController
 	{
 		public void actionPerformed(ActionEvent e)
 		{
-			if(_mastermind.getStatus() == MastermindStatus.SHOWING_SCORE)
+			if(_mastermind.getStatus() == Status.SHOWING_SCORE)
 				return;
 			
 			if(((ImageButton)e.getSource()).getUniqueName() == "easy")

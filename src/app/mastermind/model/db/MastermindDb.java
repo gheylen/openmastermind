@@ -15,13 +15,13 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package core.db;
+package app.mastermind.model.db;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import app.mastermind.Difficulty;
+import app.mastermind.model.Score;
 import com.sun.rowset.CachedRowSetImpl;
-import core.Score;
-import enums.Difficulty;
 import lib.db.adapter.Sqlite;
 
 /**

@@ -15,13 +15,12 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package enums;
+package app.mastermind;
 
-public enum MastermindStatus
+public enum Difficulty
 {
-	PLAYING,
-	WON,
-	FULL,
-	ERROR,
-	SHOWING_SCORE
+	EASY,
+	MEDIUM,
+	HARD,
+	IMPOSSIBLE
 }

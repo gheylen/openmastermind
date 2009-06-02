@@ -15,15 +15,15 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package controller;
+package app.mastermind.controller;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import core.Mastermind;
-import core.Score;
-import enums.MastermindStatus;
-import ui.ScoreFrame;
-import ui.BoardPanel;
+import app.mastermind.Status;
+import app.mastermind.model.Mastermind;
+import app.mastermind.model.Score;
+import app.mastermind.view.BoardPanel;
+import app.mastermind.view.ScoreFrame;
 
 /****
 	* Board Business Logic
@@ -48,7 +48,7 @@ public class BoardController
 		public void mouseExited(MouseEvent e) { }
 		public void mousePressed(MouseEvent e)
 		{
-			if(_mastermind.getStatus() != MastermindStatus.PLAYING)
+			if(_mastermind.getStatus() != Status.PLAYING)
 				return;
 			
 			int mTriggeredXLoc = _view.getLocationCombination((byte)(_mastermind.getCommittedCombos()));
@@ -59,9 +59,9 @@ public class BoardController
 			{
 				_mastermind.commitCurrentCombo();
 				
-				if(_mastermind.getStatus() == MastermindStatus.WON)
+				if(_mastermind.getStatus() == Status.WON)
 				{
-					_mastermind.setStatus(MastermindStatus.SHOWING_SCORE);
+					_mastermind.setStatus(Status.SHOWING_SCORE);
 					
 					Score mScore = new Score(_mastermind.getDifficulty(), null);
 					mScore.calcScore(_mastermind.getElapsedMs(), _mastermind.getCommittedCombos(), _mastermind.getChancesCount());

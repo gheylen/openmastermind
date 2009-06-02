@@ -1,7 +1,6 @@
-package core.combination;
+package app.mastermind.model.combination;
 
 import lib.collection.bag.CycleBag;
-import enums.CombResultCode;
 
 
 /**
@@ -35,7 +34,7 @@ public abstract class AbstractCombination
 			return false;
 		
 		for(byte i = 0; i < results.getSize(); i++)
-			if(results.pop() != CombResultCode.CORRECT)
+			if(results.pop() != Result.CORRECT)
 				return false;
 		
 		return true;

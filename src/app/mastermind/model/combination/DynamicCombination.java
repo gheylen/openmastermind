@@ -1,4 +1,4 @@
-package core.combination;
+package app.mastermind.model.combination;
 
 /**
  * 	@deprecated Not finished

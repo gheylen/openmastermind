@@ -15,14 +15,14 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package controller;
+package app.mastermind.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import app.mastermind.Difficulty;
+import app.mastermind.model.Mastermind;
+import app.mastermind.view.HighscoreFrame;
 import lib.component.ImageButton;
-import ui.HighscoreFrame;
-import core.Mastermind;
-import enums.Difficulty;
 
 
 public class HighscoreController
