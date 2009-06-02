@@ -15,12 +15,34 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.db;
+package lib.jar;
 
-public interface Database
-{
-	public Object open();
-	public Object close();
-	public Object resultQuery(String query, boolean lazyConnection);
-	public void DdlQuery(String query, boolean lazyConnection);
+import java.awt.Image;
+import java.awt.Toolkit;
+import java.net.URL;
+
+/**
+ * Better use setClass with as parameter a link to a class which can be found in
+ * the root of the source path before calling any other method.
+ * 		(e.g.: ResourceLocater.setClass(<someclass>.getClass());
+ */
+public final class ResourceLocater
+{   
+	private static Class clas;
+	
+	static
+	{
+		clas = ResourceLocater.class.getClass();
+	}
+	
+	public static void setClass(Class c)
+	{
+		clas = c;
+	}
+	
+    public static Image getImage(String pathName)
+	{
+    	URL url = clas.getResource(pathName); 
+    	return Toolkit.getDefaultToolkit().getImage(url);
+     }
 }

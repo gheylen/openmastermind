@@ -22,13 +22,13 @@ import java.util.ArrayList;
 import com.sun.rowset.CachedRowSetImpl;
 import core.Score;
 import enums.Difficulty;
-import lib.db.SqliteDb;
+import lib.db.adapter.Sqlite;
 
-public class MastermindDb extends SqliteDb
+public class MastermindDb extends Sqlite
 {
 	public MastermindDb()
 	{
-		super("./mastermind.db");
+		super("mastermind.db");
 	}
 	
 	public static MastermindDb factory()
@@ -47,6 +47,8 @@ public class MastermindDb extends SqliteDb
 		mQuery += "');";
 		
 		super.DdlQuery(mQuery, true);
+		
+		this.purgeScores();
 	}	
 	
 	public ArrayList<Score> getHighscores(Difficulty difficulty)
@@ -71,7 +73,7 @@ public class MastermindDb extends SqliteDb
 		
 		return mScores;
 	}
-	public void purgeCcores()
+	public void purgeScores()
 	{
 		String mQuery = "DELETE FROM highscore WHERE score NOT IN (SELECT score FROM highscore ORDER BY score DESC LIMIT 10);";
 		super.DdlQuery(mQuery, true);

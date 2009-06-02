@@ -15,26 +15,27 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.db;
+package lib.db.adapter;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import lib.db.adapter.sqlite.Exception;
 import com.sun.rowset.CachedRowSetImpl;
 
-public abstract class SqliteDb implements Database
+public abstract class Sqlite implements Abstract
 {
 	private String _db;
 	private Connection _connection;
 	
-	public SqliteDb(String db)
+	public Sqlite(String db)
 	{
 		this._db = db;
 	}
 	
-	public SqliteError open()
+	public Exception open()
 	{
 		try
 		{
@@ -43,16 +44,16 @@ public abstract class SqliteDb implements Database
 		}
 		catch (ClassNotFoundException e1)
 		{
-			return SqliteError.DRIVER_NOT_FOUND;
+			return Exception.DRIVER_NOT_FOUND;
 		}
 		catch (SQLException e)
 		{
-			return SqliteError.ACCESSIBILITY_FAILURE;
+			return Exception.SQL_ERROR;
 		}
 		
-		return SqliteError.NONE;
+		return Exception.NONE;
 	}
-	public SqliteError close()
+	public Exception close()
 	{
 	    try
 		{
@@ -60,14 +61,14 @@ public abstract class SqliteDb implements Database
 		}
 		catch (SQLException e)
 		{
-			return SqliteError.ACCESSIBILITY_FAILURE;
+			return Exception.SQL_ERROR;
 		}
 		
-		return SqliteError.NONE;
+		return Exception.NONE;
 	}
-	public CachedRowSetImpl resultQuery(String query, boolean lazyConnection)
+	public CachedRowSetImpl resultQuery(String qry, boolean lazyCon)
 	{
-		if(lazyConnection)
+		if(lazyCon)
 			this.open();
 		
 		try
@@ -87,7 +88,7 @@ public abstract class SqliteDb implements Database
 		{
 			mStat = this._connection.createStatement();
 			
-			mResults = mStat.executeQuery(query);
+			mResults = mStat.executeQuery(qry);
 			mValues = new CachedRowSetImpl();
 			mValues.populate(mResults);
 			mStat.close();
@@ -98,14 +99,14 @@ public abstract class SqliteDb implements Database
 			return null;
 		}
 		
-		if(lazyConnection)
+		if(lazyCon)
 			this.close();
 		
 		return mValues;		
 	}
-	public void DdlQuery(String query, boolean lazyConnection)
+	public void DdlQuery(String qry, boolean lazyCon)
 	{
-		if(lazyConnection)
+		if(lazyCon)
 			this.open();
 		
 		try
@@ -121,7 +122,7 @@ public abstract class SqliteDb implements Database
 		try
 		{
 			Statement mStat = this._connection.createStatement();
-			mStat.executeUpdate(query);
+			mStat.executeUpdate(qry);
 			mStat.close();
 		}
 		catch (SQLException e)
@@ -129,7 +130,7 @@ public abstract class SqliteDb implements Database
 			return;
 		}
 		
-		if(lazyConnection)
+		if(lazyCon)
 			this.close();
 	}
 }

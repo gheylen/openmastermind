@@ -27,7 +27,7 @@ import javax.swing.Timer;
 import javax.swing.border.MatteBorder;
 import java.awt.Color;
 import java.awt.Dimension;
-import lib.ext.JarImage;
+import lib.jar.ResourceLocater;
 import lib.mvc.view.DraggableFrame;
 import lib.mvc.view.ImageButton;
 import lib.mvc.view.ImagePanel;
@@ -147,15 +147,15 @@ public class ScoreFrame extends DraggableFrame
 			this.uxPanelSouth.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 			this._contentPanel.add(uxPanelSouth, BorderLayout.SOUTH);
 			{
-				this._btnOk = new ImageButton(JarImage.getImage("/img/ok.png"), "ok");
-				this._btnOk.setRolloverIcon(JarImage.getImage("/img/okHover.png"));
-				this._btnOk.setPressedIcon(JarImage.getImage("/img/okClick.png"));
+				this._btnOk = new ImageButton(ResourceLocater.getImage("/img/ok.png"), "ok");
+				this._btnOk.setRolloverIcon(ResourceLocater.getImage("/img/okHover.png"));
+				this._btnOk.setPressedIcon(ResourceLocater.getImage("/img/okClick.png"));
 				this.uxPanelSouth.add(_btnOk);
 			}
 			{
-				this._btnHighscore = new ImageButton(JarImage.getImage("/img/highscores.png"));
-				this._btnHighscore.setRolloverIcon(JarImage.getImage("/img/highscoresHover.png"));
-				this._btnHighscore.setPressedIcon(JarImage.getImage("/img/highscoresClick.png"));
+				this._btnHighscore = new ImageButton(ResourceLocater.getImage("/img/highscores.png"));
+				this._btnHighscore.setRolloverIcon(ResourceLocater.getImage("/img/highscoresHover.png"));
+				this._btnHighscore.setPressedIcon(ResourceLocater.getImage("/img/highscoresClick.png"));
 				this.uxPanelSouth.add(_btnHighscore);
 			}
 		}
@@ -273,7 +273,7 @@ public class ScoreFrame extends DraggableFrame
 			}
 		}
 		{
-			this._pnlLogo = new ImagePanel(JarImage.getImage("/img/headerSmall.png"));
+			this._pnlLogo = new ImagePanel(ResourceLocater.getImage("/img/headerSmall.png"));
 			this._pnlLogo.setFitWidth(this.getWidth());
 			this._contentPanel.add(this._pnlLogo , BorderLayout.NORTH);
 		}

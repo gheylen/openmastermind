@@ -15,29 +15,11 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.ext;
+package lib.db.adapter.sqlite;
 
-import java.awt.Image;
-import java.awt.Toolkit;
-import java.net.URL;
-
-public final class JarImage
-{   
-	private static Class clas;
-	
-	static
-	{
-		clas = JarImage.class.getClass();
-	}
-	
-	public static void setClass(Class c)
-	{
-		clas = c;
-	}
-	
-    public static Image getImage(String pathName)
-	{
-    	URL url = clas.getResource(pathName); 
-    	return Toolkit.getDefaultToolkit().getImage(url);
-     }
+public enum Exception
+{
+	DRIVER_NOT_FOUND,
+	SQL_ERROR,
+	NONE
 }

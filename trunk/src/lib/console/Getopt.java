@@ -15,11 +15,20 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.db;
+package lib.console;
 
-public enum SqliteError
+import java.util.HashMap;
+
+public final class Getopt
 {
-	DRIVER_NOT_FOUND,
-	ACCESSIBILITY_FAILURE,
-	NONE
+	public static HashMap<String, String> parsePars(String[] pars)
+	{
+		HashMap<String, String> mPars = new HashMap<String, String>();
+		
+		for(int i = 0; i < pars.length; i++)
+			if(pars[i].startsWith("-") && (i + 1) < pars.length && !pars[i + 1].startsWith("-"))
+				mPars.put(pars[i].replace("-", ""), pars[i + 1]);
+		
+		return mPars;
+	}
 }
