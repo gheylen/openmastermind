@@ -29,7 +29,7 @@ public class Main
 {
 	public void run()
 	{
-		//Database abstraction layers
+		//Initialize Database abstraction layers
 		MastermindDb db;
 		if(!new File("mastermind.db").exists())
 			db = MastermindDb.factory();
@@ -43,9 +43,9 @@ public class Main
         MastermindFrame viewMastermind = new MastermindFrame();
         BoardPanel viewBoard = new BoardPanel(model);
         
-        //Controllers
-        MastermindController controllerMastermind = new MastermindController(model, viewMastermind);
-        BoardController controllerBoard = new BoardController(model, viewBoard);
+        //Controllers (Pointer remains on the event thread)
+        new MastermindController(model, viewMastermind);
+        new BoardController(model, viewBoard);
         
         //Start EDT thread async
         viewMastermind.setPanelBoard(viewBoard);
@@ -55,7 +55,10 @@ public class Main
 	public static void main(String[] args) throws SQLException
 	{
 		Main main = new Main();
-		ResourceLocater.setClass(main.getClass());
+		
+		//Links everything correctly when exported to a JAR folder
+		ResourceLocater.setRootClass(main.getClass());
+		
 		main.run();
 	}
 }

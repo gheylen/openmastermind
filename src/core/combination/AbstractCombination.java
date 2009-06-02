@@ -1,6 +1,6 @@
 package core.combination;
 
-import lib.collection.CycleBag;
+import lib.collection.bag.CycleBag;
 import enums.CombResultCode;
 
 

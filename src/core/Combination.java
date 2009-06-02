@@ -19,7 +19,7 @@ package core;
 
 import java.util.HashSet;
 import java.util.Random;
-import lib.collection.CycleBag;
+import lib.collection.bag.CycleBag;
 import enums.CombResultCode;
 
 /****

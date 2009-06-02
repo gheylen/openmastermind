@@ -15,18 +15,19 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.collection;
+package lib.collection.bag;
 
-import java.util.Random;
 
 /**
- * Pops random nodes out of the bag
+ * This won't allow equal object in the bag.
+ * 
+ * @deprecated  Use proper Set Collections
  */
-public final class RandomBag extends AbstractBag
+public final class SetBag extends Abstract
 {	
-	public Object pop()
+	public void push(Object node)
 	{
-		Random mRand = new Random();		
-		return super.pop(mRand.nextInt() % this.getSize());
+		if(!this.contains(node))
+			super.push(node);
 	}
 }

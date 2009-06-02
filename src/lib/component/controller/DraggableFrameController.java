@@ -15,19 +15,19 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.mvc.controller;
+package lib.component.controller;
 
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import lib.mvc.view.DraggableFrame;
+import lib.component.DraggableFrame;
 
-public class DraggableController
+public class DraggableFrameController
 {
 	private DraggableFrame _view;
 	
-	public DraggableController(DraggableFrame view)
+	public DraggableFrameController(DraggableFrame view)
 	{
 		this._view = view;
 		this._view.addClickListener(new ClickListener());

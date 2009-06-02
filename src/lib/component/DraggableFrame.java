@@ -15,23 +15,23 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.mvc.view;
+package lib.component;
 
 import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import javax.swing.JFrame;
-import lib.mvc.controller.DraggableController;
+import lib.component.controller.DraggableFrameController;
 
 public abstract class DraggableFrame extends JFrame
 {
 	private Point _lastClick;
-	private DraggableController _controller;
 	
 	protected DraggableFrame()
 	{
-		this._controller = new DraggableController(this);
+		//Pointer remains on the event thread!
+		new DraggableFrameController(this);
 	}
 	
 	public void addDragListener(MouseMotionListener e)
