@@ -17,6 +17,13 @@
 
 import java.io.File;
 import java.sql.SQLException;
+import app.mastermind.controller.BoardController;
+import app.mastermind.controller.MastermindController;
+import app.mastermind.model.Mastermind;
+import app.mastermind.model.db.MastermindDb;
+import app.mastermind.view.BoardPanel;
+import app.mastermind.view.MastermindFrame;
+import lib.jar.ResourceLocater;
 
 public class Main
 {
