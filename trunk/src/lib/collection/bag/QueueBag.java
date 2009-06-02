@@ -15,30 +15,27 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.collection;
+package lib.collection.bag;
 
 /**
- * Cycles through the bag without deleting the nodes on pop. (Similar to a queue, but leaves nodes untouched on pop)
+ * Deletes a popped node (In contrast to CycleBag)
  */
-public final class CycleBag extends AbstractBag
+public final class QueueBag extends Abstract
 {
-	private int _curId;
+	private boolean _fifo;
 	
-	public CycleBag()
+	public QueueBag(boolean fifo)
 	{
-		this._curId = 0;
+		this._fifo = fifo;
 	}
 	
 	public Object pop()
 	{
-		Object mNode = super.pop(this._curId);
+		if(super.getSize() == 0)
+			return null;
 		
-		//Update cycling index
-		if(_curId + 1 >= this.getSize())
-			this._curId = 0;
-		else
-			this._curId++;
-		
+		Object mNode = super.pop((this._fifo ? 0 : super.getSize() - 1));
+		super.drop((this._fifo ? 0 : super.getSize() - 1));
 		return mNode;
 	}
 }

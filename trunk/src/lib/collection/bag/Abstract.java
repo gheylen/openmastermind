@@ -15,16 +15,17 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.collection;
+package lib.collection.bag;
 
 import java.util.Arrays;
+import lib.collection.Bag;
 
-public abstract class AbstractBag implements Bag
+public abstract class Abstract implements Bag
 {
 	private int _amountNodes;
 	protected Object[] _data;
 	
-	protected AbstractBag()
+	protected Abstract()
 	{
 		this._amountNodes = 0;
 		this._data = new Object[3];

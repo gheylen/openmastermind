@@ -15,36 +15,30 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.mvc.controller;
+package lib.collection.bag;
 
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import lib.mvc.view.ImagePanel;
-
-public class ImagePanelController
+/**
+ * Cycles through the bag without deleting the nodes on pop. (Similar to a queue, but leaves nodes untouched on pop)
+ */
+public final class CycleBag extends Abstract
 {
-	private ImagePanel _view;
+	private int _curId;
 	
-	public ImagePanelController(ImagePanel view)
+	public CycleBag()
 	{
-		this._view = view;
-		this._view.addHoverListener(new HoverListener());
+		this._curId = 0;
 	}
 	
-	class HoverListener implements MouseListener
+	public Object pop()
 	{
-		public void mouseClicked(MouseEvent e) { }
-		public void mouseEntered(MouseEvent e)
-		{
-			_view.emulateHover(true);
-			_view.repaint();
-		}
-		public void mouseExited(MouseEvent e)
-		{
-			_view.emulateHover(false);
-			_view.repaint();
-		}
-		public void mousePressed(MouseEvent e) { } 
-		public void mouseReleased(MouseEvent e) { }
+		Object mNode = super.pop(this._curId);
+		
+		//Update cycling index
+		if(_curId + 1 >= this.getSize())
+			this._curId = 0;
+		else
+			this._curId++;
+		
+		return mNode;
 	}
 }

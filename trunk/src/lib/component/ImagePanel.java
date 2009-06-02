@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.mvc.view;
+package lib.component;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -26,7 +26,7 @@ import java.awt.event.MouseListener;
 import java.awt.geom.AffineTransform;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-import lib.mvc.controller.ImagePanelController;
+import lib.component.controller.ImagePanelController;
 
 public class ImagePanel extends JPanel
 {
@@ -34,7 +34,6 @@ public class ImagePanel extends JPanel
 	private Image _imgHover;
 	private double _fitFactorHeight;
 	private double _fitFactorWidth;
-	private ImagePanelController _controller;
 	private boolean _hover;
 	
 	public ImagePanel(Image image)
@@ -44,7 +43,8 @@ public class ImagePanel extends JPanel
 		this.setFit(this._img.getWidth(null), this._img.getHeight(null));
 		this._hover = false;
 		
-		this._controller = new ImagePanelController(this);
+		//Pointer remains on the event thread!
+		new ImagePanelController(this);
 	}
 	
 	public void setImage(Image img)

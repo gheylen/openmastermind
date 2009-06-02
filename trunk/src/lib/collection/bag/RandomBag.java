@@ -15,27 +15,18 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.collection;
+package lib.collection.bag;
+
+import java.util.Random;
 
 /**
- * Deletes a popped node (In contrast to CycleBag)
+ * Pops random nodes out of the bag
  */
-public final class QueueBag extends AbstractBag
-{
-	private boolean _fifo;
-	
-	public QueueBag(boolean fifo)
-	{
-		this._fifo = fifo;
-	}
-	
+public final class RandomBag extends Abstract
+{	
 	public Object pop()
 	{
-		if(super.getSize() == 0)
-			return null;
-		
-		Object mNode = super.pop((this._fifo ? 0 : super.getSize() - 1));
-		super.drop((this._fifo ? 0 : super.getSize() - 1));
-		return mNode;
+		Random mRand = new Random();		
+		return super.pop(mRand.nextInt() % this.getSize());
 	}
 }

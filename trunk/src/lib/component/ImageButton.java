@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.mvc.view;
+package lib.component;
 
 import java.awt.Dimension;
 import java.awt.Image;
@@ -34,12 +34,12 @@ public class ImageButton extends JButton
 	public ImageButton(Image img, String uniqueName)
 	{
 		this._uniqueName = uniqueName;
-		this.setBorder(null);
 		this._icoBuf = new ImageIcon(img);
-		this.setIcon(this._icoBuf);
-		this.setPreferredSize(new Dimension(this.getIcon().getIconWidth(), this.getIcon().getIconHeight()));
+		super.setIcon(this._icoBuf);
+		super.setBorder(null);
+		super.setPreferredSize(new Dimension(this.getIcon().getIconWidth(), this.getIcon().getIconHeight()));
 	}
-	
+
 	public void setActive(boolean pressed)
 	{
 		if(pressed)
@@ -54,7 +54,7 @@ public class ImageButton extends JButton
 	{
 		super.setPressedIcon(new ImageIcon(img));
 	}
-	public void setRolloverIcon(Image img)
+	public void setHoverIcon(Image img)
 	{
 		super.setRolloverIcon(new ImageIcon(img));
 	}

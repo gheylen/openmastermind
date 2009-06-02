@@ -27,10 +27,10 @@ import javax.swing.Timer;
 import javax.swing.border.MatteBorder;
 import java.awt.Color;
 import java.awt.Dimension;
+import lib.component.DraggableFrame;
+import lib.component.ImageButton;
+import lib.component.ImagePanel;
 import lib.jar.ResourceLocater;
-import lib.mvc.view.DraggableFrame;
-import lib.mvc.view.ImageButton;
-import lib.mvc.view.ImagePanel;
 import javax.swing.JLabel;
 import controller.ScoreController;
 import core.Mastermind;
@@ -38,7 +38,6 @@ import core.Mastermind;
 public class ScoreFrame extends DraggableFrame
 {
 	private Mastermind _mastermind;
-	private ScoreController _controller;
 	private JPanel uxPanelSouth;
 	private ImageButton _btnOk;
 	private Timer _scoreTimer;
@@ -76,7 +75,7 @@ public class ScoreFrame extends DraggableFrame
 		this._mastermind = mastermind;
 		this._init();
 		this.setMiddleScreen();
-		this._controller = new ScoreController(this._mastermind, this);
+		new ScoreController(this._mastermind, this);
 	}
 	
 	public void addCloseListener(ActionListener e)
@@ -147,15 +146,15 @@ public class ScoreFrame extends DraggableFrame
 			this.uxPanelSouth.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 			this._contentPanel.add(uxPanelSouth, BorderLayout.SOUTH);
 			{
-				this._btnOk = new ImageButton(ResourceLocater.getImage("/img/ok.png"), "ok");
-				this._btnOk.setRolloverIcon(ResourceLocater.getImage("/img/okHover.png"));
-				this._btnOk.setPressedIcon(ResourceLocater.getImage("/img/okClick.png"));
+				this._btnOk = new ImageButton(ResourceLocater.getImage("/res/img/ok.png"), "ok");
+				this._btnOk.setHoverIcon(ResourceLocater.getImage("/res/img/okHover.png"));
+				this._btnOk.setPressedIcon(ResourceLocater.getImage("/res/img/okClick.png"));
 				this.uxPanelSouth.add(_btnOk);
 			}
 			{
-				this._btnHighscore = new ImageButton(ResourceLocater.getImage("/img/highscores.png"));
-				this._btnHighscore.setRolloverIcon(ResourceLocater.getImage("/img/highscoresHover.png"));
-				this._btnHighscore.setPressedIcon(ResourceLocater.getImage("/img/highscoresClick.png"));
+				this._btnHighscore = new ImageButton(ResourceLocater.getImage("/res/img/highscores.png"));
+				this._btnHighscore.setHoverIcon(ResourceLocater.getImage("/res/img/highscoresHover.png"));
+				this._btnHighscore.setPressedIcon(ResourceLocater.getImage("/res/img/highscoresClick.png"));
 				this.uxPanelSouth.add(_btnHighscore);
 			}
 		}
@@ -273,7 +272,7 @@ public class ScoreFrame extends DraggableFrame
 			}
 		}
 		{
-			this._pnlLogo = new ImagePanel(ResourceLocater.getImage("/img/headerSmall.png"));
+			this._pnlLogo = new ImagePanel(ResourceLocater.getImage("/res/img/headerSmall.png"));
 			this._pnlLogo.setFitWidth(this.getWidth());
 			this._contentPanel.add(this._pnlLogo , BorderLayout.NORTH);
 		}

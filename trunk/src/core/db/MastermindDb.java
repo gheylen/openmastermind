@@ -50,7 +50,6 @@ public class MastermindDb extends Sqlite
 		
 		this.purgeScores();
 	}	
-	
 	public ArrayList<Score> getHighscores(Difficulty difficulty)
 	{
 		ArrayList<Score> mScores = new ArrayList<Score>();

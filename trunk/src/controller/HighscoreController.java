@@ -19,7 +19,7 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import lib.mvc.view.ImageButton;
+import lib.component.ImageButton;
 import ui.HighscoreFrame;
 import core.Mastermind;
 import enums.Difficulty;

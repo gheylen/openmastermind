@@ -22,10 +22,14 @@ import java.awt.Toolkit;
 import java.net.URL;
 
 /**
- * Better use setClass with as parameter a link to a class which can be found in
- * the root of the source path before calling any other method.
- * 		(e.g.: ResourceLocater.setClass(<someclass>.getClass());
+ * This can be used to obtain resources (such as images) in a JAR file.
+ * 
+ * Note: Should set the root class first. (e.g.: "ResourceLocater.setRootClass(<someclass>.getClass());")
+ * Note: Resources must be in the same source folder as the root class defined.
+ * Note: Resources can only be read.
+ * Note: Is suppressing unchecked warnings! (Class is a raw type. Might be fixed in the future)
  */
+@SuppressWarnings("unchecked")
 public final class ResourceLocater
 {   
 	private static Class clas;
@@ -35,14 +39,31 @@ public final class ResourceLocater
 		clas = ResourceLocater.class.getClass();
 	}
 	
-	public static void setClass(Class c)
+	/**
+	 * 
+	 * @param c
+	 */
+	public static void setRootClass(Class c)
 	{
 		clas = c;
 	}
-	
-    public static Image getImage(String pathName)
+	/**
+	 * Note: This is the 'abstract' method of the ResourceLocater: should not be called directly.
+	 * 
+	 * @param path
+	 * @return
+	 */
+	public static URL getResource(String path)
 	{
-    	URL url = clas.getResource(pathName); 
-    	return Toolkit.getDefaultToolkit().getImage(url);
-     }
+		return clas.getResource(path);
+	}
+	/**
+	 * 
+	 * @param path
+	 * @return
+	 */
+    public static Image getImage(String path)
+	{
+    	return Toolkit.getDefaultToolkit().getImage(getResource(path));
+    }
 }
