@@ -20,7 +20,6 @@ package mastermind.model;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import mastermind.model.db.MastermindDb;
 import mastermind.model.game.Difficulty;
 import mastermind.model.game.Status;
 
@@ -40,9 +39,9 @@ public final class Game
 	private boolean _allowDoubleColorsInCode;
 	private Difficulty _difficulty;
 	private Status _status;
-	private MastermindDb _db;
+	private Database _db;
 	
-	public Game(MastermindDb db)
+	public Game(Database db)
 	{
 		this._db = db;
 		this._combinations = new ArrayList<Combination>();
@@ -58,7 +57,7 @@ public final class Game
 	{
 		this._lastScore = score;
 	}
-	public MastermindDb getDb()
+	public Database getDb()
 	{
 		return this._db;
 	}

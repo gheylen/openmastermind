@@ -21,8 +21,8 @@ import java.io.File;
 import java.sql.SQLException;
 import mastermind.controller.BoardController;
 import mastermind.controller.GameController;
+import mastermind.model.Database;
 import mastermind.model.Game;
-import mastermind.model.db.MastermindDb;
 import mastermind.view.BoardPanel;
 import mastermind.view.MastermindFrame;
 
@@ -31,11 +31,11 @@ public class Main
 	public void run()
 	{
 		//Initialize Database abstraction layers
-		MastermindDb db;
+		Database db;
 		if(!new File("mastermind.db").exists())
-			db = MastermindDb.factory();
+			db = Database.factory();
 		else
-			db = new MastermindDb();
+			db = new Database();
 		
 		//Models
 		Game model = new Game(db);

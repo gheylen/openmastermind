@@ -15,28 +15,27 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package mastermind.model.db;
+package mastermind.model;
 
 import gheylenlib.db.adapter.Sqlite;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import mastermind.model.Score;
 import mastermind.model.game.Difficulty;
 import com.sun.rowset.CachedRowSetImpl;
 
 /**
  * Note: This could be merged with the head Mastermind model in the future. 
  */
-public class MastermindDb extends Sqlite
+public class Database extends Sqlite
 {
-	public MastermindDb()
+	public Database()
 	{
 		super("mastermind.db");
 	}
 	
-	public static MastermindDb factory()
+	public static Database factory()
 	{
-		MastermindDb mDb = new MastermindDb();
+		Database mDb = new Database();
 		mDb.DdlQuery("CREATE TABLE highscore(name TEXT, score INT, difficulty TEXT);", true);
 		return mDb;
 	}
