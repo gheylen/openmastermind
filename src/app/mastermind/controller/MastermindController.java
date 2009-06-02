@@ -17,13 +17,13 @@
 
 package app.mastermind.controller;
 
+import gheylenlib.component.ImageButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import app.mastermind.Difficulty;
 import app.mastermind.Status;
 import app.mastermind.model.Mastermind;
 import app.mastermind.view.MastermindFrame;
-import lib.component.ImageButton;
 
 /****
 	* Mastermind Business Logic

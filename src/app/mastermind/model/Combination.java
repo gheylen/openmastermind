@@ -17,10 +17,10 @@
 
 package app.mastermind.model;
 
+import gheylenlib.collection.bag.CycleBag;
 import java.util.HashSet;
 import java.util.Random;
 import app.mastermind.model.combination.Result;
-import lib.collection.bag.CycleBag;
 
 /****
 	* Model Combination

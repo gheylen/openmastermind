@@ -15,12 +15,27 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.db.adapter;
+package gheylenlib.collection.bag;
 
-public interface Abstract
+/**
+ * Deletes a popped node (In contrast to CycleBag)
+ */
+public final class QueueBag extends Abstract
 {
-	public Object open();
-	public Object close();
-	public Object resultQuery(String qry, boolean lazyCon);
-	public void DdlQuery(String qry, boolean lazyCon);
+	private boolean _fifo;
+	
+	public QueueBag(boolean fifo)
+	{
+		this._fifo = fifo;
+	}
+	
+	public Object pop()
+	{
+		if(super.getSize() == 0)
+			return null;
+		
+		Object mNode = super.pop((this._fifo ? 0 : super.getSize() - 1));
+		super.drop((this._fifo ? 0 : super.getSize() - 1));
+		return mNode;
+	}
 }

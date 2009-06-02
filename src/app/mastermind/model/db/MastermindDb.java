@@ -17,12 +17,12 @@
 
 package app.mastermind.model.db;
 
+import gheylenlib.db.adapter.Sqlite;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import app.mastermind.Difficulty;
 import app.mastermind.model.Score;
 import com.sun.rowset.CachedRowSetImpl;
-import lib.db.adapter.Sqlite;
 
 /**
  * Note: This could be merged with the head Mastermind model in the future. 

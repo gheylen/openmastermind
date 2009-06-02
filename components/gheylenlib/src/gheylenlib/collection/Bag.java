@@ -15,11 +15,13 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.db.adapter.sqlite;
+package gheylenlib.collection;
 
-public enum Exception
+public interface Bag
 {
-	DRIVER_NOT_FOUND,
-	SQL_ERROR,
-	NONE
+	public void push(Object node);
+	public abstract Object pop(int nodeId);
+	public int getSize();
+	public boolean drop(int nodeId);
+	public boolean contains(Object node);
 }

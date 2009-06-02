@@ -17,6 +17,7 @@
 
 package app.mastermind.controller;
 
+import gheylenlib.component.ImageButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -26,7 +27,6 @@ import app.mastermind.model.Mastermind;
 import app.mastermind.model.Score;
 import app.mastermind.view.HighscoreFrame;
 import app.mastermind.view.ScoreFrame;
-import lib.component.ImageButton;
 
 
 public class ScoreController

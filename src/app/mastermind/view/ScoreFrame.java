@@ -17,6 +17,10 @@
 
 package app.mastermind.view;
 
+import gheylenlib.component.DraggableFrame;
+import gheylenlib.component.ImageButton;
+import gheylenlib.component.ImagePanel;
+import gheylenlib.jar.ResourceLocater;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -27,10 +31,6 @@ import javax.swing.Timer;
 import javax.swing.border.MatteBorder;
 import java.awt.Color;
 import java.awt.Dimension;
-import lib.component.DraggableFrame;
-import lib.component.ImageButton;
-import lib.component.ImagePanel;
-import lib.jar.ResourceLocater;
 import javax.swing.JLabel;
 import app.mastermind.controller.ScoreController;
 import app.mastermind.model.Mastermind;

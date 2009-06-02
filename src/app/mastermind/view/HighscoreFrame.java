@@ -17,6 +17,9 @@
 
 package app.mastermind.view;
 
+import gheylenlib.component.DraggableFrame;
+import gheylenlib.component.ImageButton;
+import gheylenlib.jar.ResourceLocater;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -24,9 +27,6 @@ import javax.swing.SwingConstants;
 import javax.swing.Timer;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.MatteBorder;
-import lib.component.DraggableFrame;
-import lib.component.ImageButton;
-import lib.jar.ResourceLocater;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;

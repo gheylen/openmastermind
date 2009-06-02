@@ -15,14 +15,14 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.component;
+package gheylenlib.component;
 
+import gheylenlib.component.controller.DraggableFrameController;
 import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import javax.swing.JFrame;
-import lib.component.controller.DraggableFrameController;
 
 public abstract class DraggableFrame extends JFrame
 {

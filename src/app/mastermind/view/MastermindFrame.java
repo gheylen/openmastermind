@@ -17,15 +17,15 @@
 
 package app.mastermind.view;
 
+import gheylenlib.component.DraggableFrame;
+import gheylenlib.component.ImageButton;
+import gheylenlib.component.ImagePanel;
+import gheylenlib.jar.ResourceLocater;
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.Dimension;
 import java.awt.Color;
-import lib.component.DraggableFrame;
-import lib.component.ImageButton;
-import lib.component.ImagePanel;
-import lib.jar.ResourceLocater;
 import javax.swing.border.MatteBorder;
 import app.mastermind.Difficulty;
 import java.awt.FlowLayout;

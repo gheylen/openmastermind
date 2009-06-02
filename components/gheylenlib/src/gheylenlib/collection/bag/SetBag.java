@@ -15,20 +15,19 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.console;
+package gheylenlib.collection.bag;
 
-import java.util.HashMap;
 
-public final class Getopt
-{
-	public static HashMap<String, String> parsePars(String[] pars)
+/**
+ * This won't allow equal object in the bag.
+ * 
+ * @deprecated  Use proper Set Collections
+ */
+public final class SetBag extends Abstract
+{	
+	public void push(Object node)
 	{
-		HashMap<String, String> mPars = new HashMap<String, String>();
-		
-		for(int i = 0; i < pars.length; i++)
-			if(pars[i].startsWith("-") && (i + 1) < pars.length && !pars[i + 1].startsWith("-"))
-				mPars.put(pars[i].replace("-", ""), pars[i + 1]);
-		
-		return mPars;
+		if(!this.contains(node))
+			super.push(node);
 	}
 }

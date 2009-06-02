@@ -15,27 +15,20 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.collection.bag;
+package gheylenlib.console;
 
-/**
- * Deletes a popped node (In contrast to CycleBag)
- */
-public final class QueueBag extends Abstract
+import java.util.HashMap;
+
+public final class Getopt
 {
-	private boolean _fifo;
-	
-	public QueueBag(boolean fifo)
+	public static HashMap<String, String> parsePars(String[] pars)
 	{
-		this._fifo = fifo;
-	}
-	
-	public Object pop()
-	{
-		if(super.getSize() == 0)
-			return null;
+		HashMap<String, String> mPars = new HashMap<String, String>();
 		
-		Object mNode = super.pop((this._fifo ? 0 : super.getSize() - 1));
-		super.drop((this._fifo ? 0 : super.getSize() - 1));
-		return mNode;
+		for(int i = 0; i < pars.length; i++)
+			if(pars[i].startsWith("-") && (i + 1) < pars.length && !pars[i + 1].startsWith("-"))
+				mPars.put(pars[i].replace("-", ""), pars[i + 1]);
+		
+		return mPars;
 	}
 }

@@ -15,10 +15,10 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.collection.bag;
+package gheylenlib.collection.bag;
 
+import gheylenlib.collection.Bag;
 import java.util.Arrays;
-import lib.collection.Bag;
 
 public abstract class Abstract implements Bag
 {

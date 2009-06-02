@@ -15,14 +15,14 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.db.adapter;
+package gheylenlib.db.adapter;
 
+import gheylenlib.db.adapter.sqlite.Exception;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import lib.db.adapter.sqlite.Exception;
 import com.sun.rowset.CachedRowSetImpl;
 
 public abstract class Sqlite implements Abstract

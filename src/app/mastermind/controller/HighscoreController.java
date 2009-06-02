@@ -17,12 +17,12 @@
 
 package app.mastermind.controller;
 
+import gheylenlib.component.ImageButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import app.mastermind.Difficulty;
 import app.mastermind.model.Mastermind;
 import app.mastermind.view.HighscoreFrame;
-import lib.component.ImageButton;
 
 
 public class HighscoreController

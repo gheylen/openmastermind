@@ -15,13 +15,13 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.component.controller;
+package gheylenlib.component.controller;
 
+import gheylenlib.component.DraggableFrame;
 import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import lib.component.DraggableFrame;
 
 public class DraggableFrameController
 {
