@@ -192,7 +192,7 @@ public class ScoreFrame extends DraggableFrame
 					this._pnlResultRow1.add(this._lblDoubleColors);
 				}
 				{
-					this._pnlDoubleColors = new JLabel(this._mastermind.isAllowDoubleColors());
+					this._pnlDoubleColors = new JLabel((this._mastermind.getAllowDoubleColors() ? "yes" : "no"));
 					this._pnlResultRow1.add(this._pnlDoubleColors);
 				}
 			}

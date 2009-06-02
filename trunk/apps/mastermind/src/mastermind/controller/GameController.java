@@ -23,7 +23,7 @@ import java.awt.event.ActionListener;
 import mastermind.model.Game;
 import mastermind.model.game.Difficulty;
 import mastermind.model.game.Status;
-import mastermind.view.MastermindFrame;
+import mastermind.view.GameFrame;
 
 /****
 	* Mastermind Business Logic
@@ -31,9 +31,9 @@ import mastermind.view.MastermindFrame;
 public class GameController
 {
 	private Game _mastermind;
-	private MastermindFrame _view;
+	private GameFrame _view;
 	
-	public GameController(Game mastermind, MastermindFrame view)
+	public GameController(Game mastermind, GameFrame view)
 	{
 		this._mastermind = mastermind;
 		this._view = view;

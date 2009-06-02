@@ -22,6 +22,5 @@ public enum Status
 	PLAYING,
 	WON,
 	FULL,
-	ERROR,
 	SHOWING_SCORE
 }
