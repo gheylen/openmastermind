@@ -32,10 +32,10 @@ import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JLabel;
-import mastermind.Difficulty;
 import mastermind.controller.HighscoreController;
-import mastermind.model.Mastermind;
+import mastermind.model.Game;
 import mastermind.model.Score;
+import mastermind.model.game.Difficulty;
 import java.awt.Dimension;
 
 public class HighscoreFrame extends DraggableFrame
@@ -57,7 +57,7 @@ public class HighscoreFrame extends DraggableFrame
 	private JPanel _pnlSpacer0;
 	private JPanel _pnlSpacer1;
 	
-	public HighscoreFrame(Mastermind mastermind)
+	public HighscoreFrame(Game mastermind)
 	{
 		this._init();
 		this.setEverythingInvisible();

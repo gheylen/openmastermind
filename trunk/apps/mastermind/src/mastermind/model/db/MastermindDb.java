@@ -20,8 +20,8 @@ package mastermind.model.db;
 import gheylenlib.db.adapter.Sqlite;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import mastermind.Difficulty;
 import mastermind.model.Score;
+import mastermind.model.game.Difficulty;
 import com.sun.rowset.CachedRowSetImpl;
 
 /**

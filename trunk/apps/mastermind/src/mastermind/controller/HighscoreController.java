@@ -20,17 +20,17 @@ package mastermind.controller;
 import gheylenlib.component.ImageButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import mastermind.Difficulty;
-import mastermind.model.Mastermind;
+import mastermind.model.Game;
+import mastermind.model.game.Difficulty;
 import mastermind.view.HighscoreFrame;
 
 
 public class HighscoreController
 {
-	private Mastermind _mastermind;
+	private Game _mastermind;
 	private HighscoreFrame _view;
 	
-	public HighscoreController(Mastermind mastermind, HighscoreFrame view)
+	public HighscoreController(Game mastermind, HighscoreFrame view)
 	{
 		this._mastermind = mastermind;
 		this._view = view;

@@ -20,20 +20,20 @@ package mastermind.controller;
 import gheylenlib.component.ImageButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import mastermind.Difficulty;
-import mastermind.Status;
-import mastermind.model.Mastermind;
+import mastermind.model.Game;
+import mastermind.model.game.Difficulty;
+import mastermind.model.game.Status;
 import mastermind.view.MastermindFrame;
 
 /****
 	* Mastermind Business Logic
 ****/
-public class MastermindController
+public class GameController
 {
-	private Mastermind _mastermind;
+	private Game _mastermind;
 	private MastermindFrame _view;
 	
-	public MastermindController(Mastermind mastermind, MastermindFrame view)
+	public GameController(Game mastermind, MastermindFrame view)
 	{
 		this._mastermind = mastermind;
 		this._view = view;

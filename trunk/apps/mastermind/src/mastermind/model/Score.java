@@ -17,7 +17,7 @@
 
 package mastermind.model;
 
-import mastermind.Difficulty;
+import mastermind.model.game.Difficulty;
 
 public class Score
 {

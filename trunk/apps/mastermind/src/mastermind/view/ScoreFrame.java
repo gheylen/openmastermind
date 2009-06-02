@@ -33,11 +33,11 @@ import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JLabel;
 import mastermind.controller.ScoreController;
-import mastermind.model.Mastermind;
+import mastermind.model.Game;
 
 public class ScoreFrame extends DraggableFrame
 {
-	private Mastermind _mastermind;
+	private Game _mastermind;
 	private JPanel uxPanelSouth;
 	private ImageButton _btnOk;
 	private Timer _scoreTimer;
@@ -70,7 +70,7 @@ public class ScoreFrame extends DraggableFrame
 	private JPanel _pnlScores;
 	private JPanel _pnlSpacer1;
 	
-	public ScoreFrame(Mastermind mastermind)
+	public ScoreFrame(Game mastermind)
 	{
 		this._mastermind = mastermind;
 		this._init();

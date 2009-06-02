@@ -20,8 +20,8 @@ import gheylenlib.jar.ResourceLocater;
 import java.io.File;
 import java.sql.SQLException;
 import mastermind.controller.BoardController;
-import mastermind.controller.MastermindController;
-import mastermind.model.Mastermind;
+import mastermind.controller.GameController;
+import mastermind.model.Game;
 import mastermind.model.db.MastermindDb;
 import mastermind.view.BoardPanel;
 import mastermind.view.MastermindFrame;
@@ -38,14 +38,14 @@ public class Main
 			db = new MastermindDb();
 		
 		//Models
-		Mastermind model = new Mastermind(db);
+		Game model = new Game(db);
 		
 		//Views
         MastermindFrame viewMastermind = new MastermindFrame();
         BoardPanel viewBoard = new BoardPanel(model);
         
         //Controllers (Pointer remains on the event thread)
-        new MastermindController(model, viewMastermind);
+        new GameController(model, viewMastermind);
         new BoardController(model, viewBoard);
         
         //Start EDT thread async

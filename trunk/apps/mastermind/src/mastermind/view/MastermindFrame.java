@@ -27,7 +27,7 @@ import javax.swing.JPanel;
 import java.awt.Dimension;
 import java.awt.Color;
 import javax.swing.border.MatteBorder;
-import mastermind.Difficulty;
+import mastermind.model.game.Difficulty;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 
