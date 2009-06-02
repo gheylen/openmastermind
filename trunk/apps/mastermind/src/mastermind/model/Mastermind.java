@@ -15,14 +15,14 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package app.mastermind.model;
+package mastermind.model;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import app.mastermind.Difficulty;
-import app.mastermind.Status;
-import app.mastermind.model.db.MastermindDb;
+import mastermind.Difficulty;
+import mastermind.Status;
+import mastermind.model.db.MastermindDb;
 
 /****
  	* Model Mastermind

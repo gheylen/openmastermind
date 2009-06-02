@@ -15,12 +15,12 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package app.mastermind.model;
+package mastermind.model;
 
 import gheylenlib.collection.bag.CycleBag;
 import java.util.HashSet;
 import java.util.Random;
-import app.mastermind.model.combination.Result;
+import mastermind.model.combination.Result;
 
 /****
 	* Model Combination

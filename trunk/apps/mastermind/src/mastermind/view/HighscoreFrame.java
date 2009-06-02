@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package app.mastermind.view;
+package mastermind.view;
 
 import gheylenlib.component.DraggableFrame;
 import gheylenlib.component.ImageButton;
@@ -32,10 +32,10 @@ import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import javax.swing.JLabel;
-import app.mastermind.Difficulty;
-import app.mastermind.controller.HighscoreController;
-import app.mastermind.model.Mastermind;
-import app.mastermind.model.Score;
+import mastermind.Difficulty;
+import mastermind.controller.HighscoreController;
+import mastermind.model.Mastermind;
+import mastermind.model.Score;
 import java.awt.Dimension;
 
 public class HighscoreFrame extends DraggableFrame

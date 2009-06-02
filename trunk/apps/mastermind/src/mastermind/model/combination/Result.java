@@ -15,12 +15,11 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package app.mastermind;
+package mastermind.model.combination;
 
-public enum Difficulty
+public enum Result
 {
-	EASY,
-	MEDIUM,
-	HARD,
-	IMPOSSIBLE
+	CORRECT,
+	FOUND,
+	EMPTY
 }
