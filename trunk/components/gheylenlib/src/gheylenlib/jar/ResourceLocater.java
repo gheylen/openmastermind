@@ -47,6 +47,7 @@ public final class ResourceLocater
 	{
 		clas = c;
 	}
+		
 	/**
 	 * Note: This is the 'abstract' method of the ResourceLocater: should not be called directly.
 	 * 
@@ -57,6 +58,7 @@ public final class ResourceLocater
 	{
 		return clas.getResource(path);
 	}
+	
 	/**
 	 * 
 	 * @param path
