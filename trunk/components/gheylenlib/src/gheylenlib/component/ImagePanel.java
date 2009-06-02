@@ -15,8 +15,9 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.component;
+package gheylenlib.component;
 
+import gheylenlib.component.controller.ImagePanelController;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -26,7 +27,6 @@ import java.awt.event.MouseListener;
 import java.awt.geom.AffineTransform;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-import lib.component.controller.ImagePanelController;
 
 public class ImagePanel extends JPanel
 {

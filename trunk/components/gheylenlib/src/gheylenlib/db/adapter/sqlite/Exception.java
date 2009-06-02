@@ -15,36 +15,11 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.component.controller;
+package gheylenlib.db.adapter.sqlite;
 
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import lib.component.ImagePanel;
-
-public class ImagePanelController
+public enum Exception
 {
-	private ImagePanel _view;
-	
-	public ImagePanelController(ImagePanel view)
-	{
-		this._view = view;
-		this._view.addHoverListener(new HoverListener());
-	}
-	
-	class HoverListener implements MouseListener
-	{
-		public void mouseClicked(MouseEvent e) { }
-		public void mouseEntered(MouseEvent e)
-		{
-			_view.emulateHover(true);
-			_view.repaint();
-		}
-		public void mouseExited(MouseEvent e)
-		{
-			_view.emulateHover(false);
-			_view.repaint();
-		}
-		public void mousePressed(MouseEvent e) { } 
-		public void mouseReleased(MouseEvent e) { }
-	}
+	DRIVER_NOT_FOUND,
+	SQL_ERROR,
+	NONE
 }

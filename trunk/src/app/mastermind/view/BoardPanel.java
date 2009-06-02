@@ -17,6 +17,8 @@
 
 package app.mastermind.view;
 
+import gheylenlib.collection.bag.CycleBag;
+import gheylenlib.jar.ResourceLocater;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -30,8 +32,6 @@ import app.mastermind.model.Combination;
 import app.mastermind.model.Mastermind;
 import app.mastermind.model.combination.Result;
 import java.awt.event.MouseListener;
-import lib.collection.bag.CycleBag;
-import lib.jar.ResourceLocater;
 
 public class BoardPanel extends JPanel
 {

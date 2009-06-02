@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.collection.bag;
+package gheylenlib.collection.bag;
 
 /**
  * Cycles through the bag without deleting the nodes on pop. (Similar to a queue, but leaves nodes untouched on pop)

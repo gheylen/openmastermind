@@ -15,6 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
+import gheylenlib.jar.ResourceLocater;
 import java.io.File;
 import java.sql.SQLException;
 import app.mastermind.controller.BoardController;
@@ -23,7 +24,6 @@ import app.mastermind.model.Mastermind;
 import app.mastermind.model.db.MastermindDb;
 import app.mastermind.view.BoardPanel;
 import app.mastermind.view.MastermindFrame;
-import lib.jar.ResourceLocater;
 
 public class Main
 {

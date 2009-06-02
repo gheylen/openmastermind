@@ -1,6 +1,6 @@
 package app.mastermind.model.combination;
 
-import lib.collection.bag.CycleBag;
+import gheylenlib.collection.bag.CycleBag;
 
 
 /**
