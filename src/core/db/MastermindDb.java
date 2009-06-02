@@ -24,6 +24,9 @@ import core.Score;
 import enums.Difficulty;
 import lib.db.adapter.Sqlite;
 
+/**
+ * Note: This could be merged with the head Mastermind model in the future. 
+ */
 public class MastermindDb extends Sqlite
 {
 	public MastermindDb()
