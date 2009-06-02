@@ -23,9 +23,6 @@ import java.util.ArrayList;
 import mastermind.model.game.Difficulty;
 import com.sun.rowset.CachedRowSetImpl;
 
-/**
- * Note: This could be merged with the head Mastermind model in the future. 
- */
 public class Database extends Sqlite
 {
 	public Database()
@@ -50,7 +47,7 @@ public class Database extends Sqlite
 		
 		super.DdlQuery(mQuery, true);
 		
-		this.purgeScores();
+		//this.purgeScores();
 	}	
 	public ArrayList<Score> getHighscores(Difficulty difficulty)
 	{
@@ -74,6 +71,11 @@ public class Database extends Sqlite
 		
 		return mScores;
 	}
+	/**
+	 * Will delete everything except the top 10 scores
+	 * 
+	 * @deprecated Bugged: Different difficulties are not supported (#7)
+	 */
 	public void purgeScores()
 	{
 		String mQuery = "DELETE FROM highscore WHERE score NOT IN (SELECT score FROM highscore ORDER BY score DESC LIMIT 10);";

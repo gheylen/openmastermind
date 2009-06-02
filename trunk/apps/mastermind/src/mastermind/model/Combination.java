@@ -27,7 +27,6 @@ import mastermind.model.combination.Result;
  * 		Will never have a board bigger than 256;
  * 		Will never have a code bigger than 256;
  * 		Will never have more different colors in the code than 256.
- * 
  */
 public class Combination
 {
