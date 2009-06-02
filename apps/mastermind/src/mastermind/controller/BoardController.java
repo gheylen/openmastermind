@@ -19,9 +19,9 @@ package mastermind.controller;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import mastermind.Status;
-import mastermind.model.Mastermind;
+import mastermind.model.Game;
 import mastermind.model.Score;
+import mastermind.model.game.Status;
 import mastermind.view.BoardPanel;
 import mastermind.view.ScoreFrame;
 
@@ -30,10 +30,10 @@ import mastermind.view.ScoreFrame;
 ****/
 public class BoardController
 {
-	private Mastermind _mastermind;
+	private Game _mastermind;
 	private BoardPanel _view;
 	
-	public BoardController(Mastermind mastermind, BoardPanel view)
+	public BoardController(Game mastermind, BoardPanel view)
 	{
 		this._mastermind = mastermind;
 		this._view = view;

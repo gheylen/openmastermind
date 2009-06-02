@@ -20,14 +20,14 @@ package mastermind.model;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import mastermind.Difficulty;
-import mastermind.Status;
 import mastermind.model.db.MastermindDb;
+import mastermind.model.game.Difficulty;
+import mastermind.model.game.Status;
 
 /****
  	* Model Mastermind
 ****/
-public final class Mastermind
+public final class Game
 {
 	private Score _lastScore;
 	private ArrayList<Combination> _combinations;
@@ -42,7 +42,7 @@ public final class Mastermind
 	private Status _status;
 	private MastermindDb _db;
 	
-	public Mastermind(MastermindDb db)
+	public Game(MastermindDb db)
 	{
 		this._db = db;
 		this._combinations = new ArrayList<Combination>();

@@ -21,20 +21,20 @@ import gheylenlib.component.ImageButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import mastermind.Difficulty;
-import mastermind.Status;
-import mastermind.model.Mastermind;
+import mastermind.model.Game;
 import mastermind.model.Score;
+import mastermind.model.game.Difficulty;
+import mastermind.model.game.Status;
 import mastermind.view.HighscoreFrame;
 import mastermind.view.ScoreFrame;
 
 
 public class ScoreController
 {
-	private Mastermind _mastermind;
+	private Game _mastermind;
 	private ScoreFrame _view;
 	
-	public ScoreController(Mastermind mastermind, ScoreFrame view)
+	public ScoreController(Game mastermind, ScoreFrame view)
 	{
 		this._mastermind = mastermind;
 		this._view = view;

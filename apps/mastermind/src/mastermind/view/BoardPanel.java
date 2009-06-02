@@ -27,19 +27,19 @@ import java.awt.Point;
 import java.awt.RenderingHints;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-import mastermind.Status;
 import mastermind.model.Combination;
-import mastermind.model.Mastermind;
+import mastermind.model.Game;
 import mastermind.model.combination.Result;
+import mastermind.model.game.Status;
 import java.awt.event.MouseListener;
 
 public class BoardPanel extends JPanel
 {
-	private Mastermind _mastermind;
+	private Game _mastermind;
 	private int _borderSpace;
 	private byte _amountResultsHorizontal;
 	
-	public BoardPanel(Mastermind mastermind)
+	public BoardPanel(Game mastermind)
 	{
 		this.setBackground(new Color(153, 102, 51));
 		this._mastermind = mastermind;
