@@ -17,7 +17,7 @@
 
 import java.io.File;
 import java.sql.SQLException;
-import lib.ext.JarImage;
+import lib.jar.ResourceLocater;
 import controller.BoardController;
 import controller.MastermindController;
 import core.Mastermind;
@@ -55,7 +55,7 @@ public class Main
 	public static void main(String[] args) throws SQLException
 	{
 		Main main = new Main();
-		JarImage.setClass(main.getClass());
+		ResourceLocater.setClass(main.getClass());
 		main.run();
 	}
 }

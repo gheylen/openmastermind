@@ -15,20 +15,12 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package lib.ext;
+package lib.db.adapter;
 
-import java.util.HashMap;
-
-public final class LaunchPars
+public interface Abstract
 {
-	public static HashMap<String, String> parsePars(String[] pars)
-	{
-		HashMap<String, String> mPars = new HashMap<String, String>();
-		
-		for(int i = 0; i < pars.length; i++)
-			if(pars[i].startsWith("-") && (i + 1) < pars.length && !pars[i + 1].startsWith("-"))
-				mPars.put(pars[i].replace("-", ""), pars[i + 1]);
-		
-		return mPars;
-	}
+	public Object open();
+	public Object close();
+	public Object resultQuery(String qry, boolean lazyCon);
+	public void DdlQuery(String qry, boolean lazyCon);
 }

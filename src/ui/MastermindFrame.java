@@ -22,7 +22,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.Dimension;
 import java.awt.Color;
-import lib.ext.JarImage;
+import lib.jar.ResourceLocater;
 import lib.mvc.view.DraggableFrame;
 import lib.mvc.view.ImageButton;
 import lib.mvc.view.ImagePanel;
@@ -60,8 +60,8 @@ public class MastermindFrame extends DraggableFrame
 		this._headPanel.setPreferredSize(new Dimension(0, 110));
 		this._contentPanel.add(this._headPanel , BorderLayout.NORTH);
 		
-		this._logoPanel = new ImagePanel(JarImage.getImage("/img/headerBig.png"));
-		this._logoPanel.setImgHover(JarImage.getImage("/img/headerBigHover.png"));
+		this._logoPanel = new ImagePanel(ResourceLocater.getImage("/img/headerBig.png"));
+		this._logoPanel.setImgHover(ResourceLocater.getImage("/img/headerBigHover.png"));
 		this._logoPanel.setFitHeight(110);
 		this._headPanel.add(this._logoPanel, BorderLayout.WEST);
 		
@@ -70,29 +70,29 @@ public class MastermindFrame extends DraggableFrame
 		this._controlPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		this._headPanel.add(this._controlPanel, BorderLayout.CENTER);
 		
-		this._diffEasyButton = new ImageButton(JarImage.getImage("/img/diffEasy.png"), "easy");
-		this._diffEasyButton.setPressedIcon(JarImage.getImage("/img/diffEasyClick.png"));
-		this._diffEasyButton.setRolloverIcon(JarImage.getImage("/img/diffEasyHover.png"));
+		this._diffEasyButton = new ImageButton(ResourceLocater.getImage("/img/diffEasy.png"), "easy");
+		this._diffEasyButton.setPressedIcon(ResourceLocater.getImage("/img/diffEasyClick.png"));
+		this._diffEasyButton.setRolloverIcon(ResourceLocater.getImage("/img/diffEasyHover.png"));
 		this._controlPanel.add(this._diffEasyButton);
 		
-		this._diffMediumButton = new ImageButton(JarImage.getImage("/img/diffMedium.png"), "medium");
-		this._diffMediumButton.setPressedIcon(JarImage.getImage("/img/diffMediumClick.png"));
-		this._diffMediumButton.setRolloverIcon(JarImage.getImage("/img/diffMediumHover.png"));
+		this._diffMediumButton = new ImageButton(ResourceLocater.getImage("/img/diffMedium.png"), "medium");
+		this._diffMediumButton.setPressedIcon(ResourceLocater.getImage("/img/diffMediumClick.png"));
+		this._diffMediumButton.setRolloverIcon(ResourceLocater.getImage("/img/diffMediumHover.png"));
 		this._controlPanel.add(this._diffMediumButton);
 		
-		this._diffHardButton = new ImageButton(JarImage.getImage("/img/diffHard.png"), "hard");
-		this._diffHardButton.setPressedIcon(JarImage.getImage("/img/diffHardClick.png"));
-		this._diffHardButton.setRolloverIcon(JarImage.getImage("/img/diffHardHover.png"));
+		this._diffHardButton = new ImageButton(ResourceLocater.getImage("/img/diffHard.png"), "hard");
+		this._diffHardButton.setPressedIcon(ResourceLocater.getImage("/img/diffHardClick.png"));
+		this._diffHardButton.setRolloverIcon(ResourceLocater.getImage("/img/diffHardHover.png"));
 		this._controlPanel.add(this._diffHardButton);
 		
-		this._diffImpossibleButton = new ImageButton(JarImage.getImage("/img/diffImpossible.png"), "impossible");
-		this._diffImpossibleButton.setPressedIcon(JarImage.getImage("/img/diffImpossibleClick.png"));
-		this._diffImpossibleButton.setRolloverIcon(JarImage.getImage("/img/diffImpossibleHover.png"));
+		this._diffImpossibleButton = new ImageButton(ResourceLocater.getImage("/img/diffImpossible.png"), "impossible");
+		this._diffImpossibleButton.setPressedIcon(ResourceLocater.getImage("/img/diffImpossibleClick.png"));
+		this._diffImpossibleButton.setRolloverIcon(ResourceLocater.getImage("/img/diffImpossibleHover.png"));
 		this._controlPanel.add(this._diffImpossibleButton);
 		
-		this._exitButton = new ImageButton(JarImage.getImage("/img/exit.png"));
-		this._exitButton.setPressedIcon(JarImage.getImage("/img/exitClick.png"));
-		this._exitButton.setRolloverIcon(JarImage.getImage("/img/exitHover.png"));
+		this._exitButton = new ImageButton(ResourceLocater.getImage("/img/exit.png"));
+		this._exitButton.setPressedIcon(ResourceLocater.getImage("/img/exitClick.png"));
+		this._exitButton.setRolloverIcon(ResourceLocater.getImage("/img/exitHover.png"));
 		this._controlPanel.add(this._exitButton);
 		
 		this.setMiddleScreen();
