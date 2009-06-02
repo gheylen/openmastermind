@@ -15,15 +15,15 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package app.mastermind.controller;
+package mastermind.controller;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import app.mastermind.Status;
-import app.mastermind.model.Mastermind;
-import app.mastermind.model.Score;
-import app.mastermind.view.BoardPanel;
-import app.mastermind.view.ScoreFrame;
+import mastermind.Status;
+import mastermind.model.Mastermind;
+import mastermind.model.Score;
+import mastermind.view.BoardPanel;
+import mastermind.view.ScoreFrame;
 
 /****
 	* Board Business Logic

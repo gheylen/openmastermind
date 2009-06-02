@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package app.mastermind.view;
+package mastermind.view;
 
 import gheylenlib.collection.bag.CycleBag;
 import gheylenlib.jar.ResourceLocater;
@@ -27,10 +27,10 @@ import java.awt.Point;
 import java.awt.RenderingHints;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-import app.mastermind.Status;
-import app.mastermind.model.Combination;
-import app.mastermind.model.Mastermind;
-import app.mastermind.model.combination.Result;
+import mastermind.Status;
+import mastermind.model.Combination;
+import mastermind.model.Mastermind;
+import mastermind.model.combination.Result;
 import java.awt.event.MouseListener;
 
 public class BoardPanel extends JPanel

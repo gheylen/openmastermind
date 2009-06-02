@@ -15,14 +15,14 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package app.mastermind.controller;
+package mastermind.controller;
 
 import gheylenlib.component.ImageButton;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import app.mastermind.Difficulty;
-import app.mastermind.model.Mastermind;
-import app.mastermind.view.HighscoreFrame;
+import mastermind.Difficulty;
+import mastermind.model.Mastermind;
+import mastermind.view.HighscoreFrame;
 
 
 public class HighscoreController

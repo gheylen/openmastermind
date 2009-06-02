@@ -18,12 +18,12 @@
 import gheylenlib.jar.ResourceLocater;
 import java.io.File;
 import java.sql.SQLException;
-import app.mastermind.controller.BoardController;
-import app.mastermind.controller.MastermindController;
-import app.mastermind.model.Mastermind;
-import app.mastermind.model.db.MastermindDb;
-import app.mastermind.view.BoardPanel;
-import app.mastermind.view.MastermindFrame;
+import mastermind.controller.BoardController;
+import mastermind.controller.MastermindController;
+import mastermind.model.Mastermind;
+import mastermind.model.db.MastermindDb;
+import mastermind.view.BoardPanel;
+import mastermind.view.MastermindFrame;
 
 public class Main
 {

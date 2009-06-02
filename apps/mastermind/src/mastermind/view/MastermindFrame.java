@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package app.mastermind.view;
+package mastermind.view;
 
 import gheylenlib.component.DraggableFrame;
 import gheylenlib.component.ImageButton;
@@ -27,7 +27,7 @@ import javax.swing.JPanel;
 import java.awt.Dimension;
 import java.awt.Color;
 import javax.swing.border.MatteBorder;
-import app.mastermind.Difficulty;
+import mastermind.Difficulty;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 
