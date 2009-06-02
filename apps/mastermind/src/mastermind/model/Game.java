@@ -33,10 +33,6 @@ public final class Game
 	private Combination _currentCombo;
 	private Combination _winningCombo;
 	private Date _startTime;
-	private byte _chancesCount;
-	private byte _codeLength;
-	private byte _colorsCount;
-	private boolean _allowDoubleColorsInCode;
 	private Difficulty _difficulty;
 	private Status _status;
 	private Database _db;
@@ -48,7 +44,6 @@ public final class Game
 		this.restart(Difficulty.MEDIUM);
 	}
 
-	
 	public Score getLastScore()
 	{
 		return this._lastScore;
@@ -67,7 +62,25 @@ public final class Game
 	}
 	public byte getColorsCount()
 	{
-		return this._colorsCount;
+		byte mColors;
+		
+		switch(this._difficulty)
+		{
+			case EASY:
+				mColors = 5;
+				break;
+			case HARD:
+				mColors = 7;
+				break;
+			case IMPOSSIBLE:
+				mColors = 8;
+				break;
+			default:
+				mColors = 6;
+				break;
+		}
+		
+		return mColors;
 	}
 	public Difficulty getDifficulty()
 	{
@@ -75,7 +88,25 @@ public final class Game
 	}
 	public boolean getAllowDoubleColors()
 	{
-		return this._allowDoubleColorsInCode;
+		boolean mDoubleColorsInCode;
+		
+		switch(this._difficulty)
+		{
+			case EASY:
+				mDoubleColorsInCode = false;
+				break;
+			case HARD:
+				mDoubleColorsInCode = true;
+				break;
+			case IMPOSSIBLE:
+				mDoubleColorsInCode = true;
+				break;
+			default:
+				mDoubleColorsInCode = false;
+				break;
+		}
+		
+		return mDoubleColorsInCode;
 	}
 	public Combination getCurrentCombo()
 	{
@@ -101,7 +132,25 @@ public final class Game
 	}
 	public byte getChancesCount()
 	{
-		return this._chancesCount;
+		byte mChances;
+		
+		switch(this._difficulty)
+		{
+			case EASY:
+				mChances = 14;
+				break;
+			case HARD:
+				mChances = 10;
+				break;
+			case IMPOSSIBLE:
+				mChances = 8;
+				break;
+			default:
+				mChances = 12;
+				break;
+		}
+		
+		return mChances;
 	}
 	public byte getCommittedCombos()
 	{
@@ -109,7 +158,25 @@ public final class Game
 	}
 	public byte getCodeLength()
 	{
-		return this._codeLength;
+		byte mCodeLength;
+		
+		switch(this._difficulty)
+		{
+			case EASY:
+				mCodeLength = 3;
+				break;
+			case HARD:
+				mCodeLength = 4;
+				break;
+			case IMPOSSIBLE:
+				mCodeLength = 5;
+				break;
+			default:
+				mCodeLength = 4;
+				break;
+		}
+		
+		return mCodeLength;
 	}
 	public Combination getCombination(byte index)
 	{
@@ -117,10 +184,7 @@ public final class Game
 			return this._combinations.get(index);
 		return null;
 	}
-	public String isAllowDoubleColors()
-	{
-		return (this._allowDoubleColorsInCode ? "yes" : "no");
-	}
+
 	public void commitCurrentCombo()
 	{
 		this._addCombination(this._currentCombo);
@@ -128,69 +192,34 @@ public final class Game
 		if(Combination.analyzeResults(this._winningCombo.compareTo(this._combinations.get(this.getCommittedCombos() - 1)), this.getCodeLength()))
 			this.setStatus(Status.WON);
 		else
-			this._currentCombo = Combination.factory(this._codeLength, (byte)1);
+			this._currentCombo = Combination.factory(this.getCodeLength(), (byte)1);
 	}
 	public void restart(Difficulty difficulty)
 	{
-		this._adjustDifficulty(difficulty);
+		this._difficulty = difficulty;
 		this._combinations.clear();
-		this._winningCombo = Combination.getRandom(this._codeLength, this._colorsCount, this._allowDoubleColorsInCode);
-		this._currentCombo = Combination.factory(this._codeLength, (byte)1);
+		this._winningCombo = Combination.getRandom(this.getCodeLength(), this.getColorsCount(), this.getAllowDoubleColors());
+		this._currentCombo = Combination.factory(this.getCodeLength(), (byte)1);
 		this._startTime = new Date();
 		this.setStatus(Status.PLAYING);
 	}
 	public void updateCurrentCombo(byte pegId)
 	{
-		this._currentCombo.cyclePeg(pegId, this._colorsCount);
+		this._currentCombo.cyclePeg(pegId, this.getColorsCount());
 	}
 	public void setStatus(Status status)
 	{
 		this._status = status;
 	}
 	
-	private boolean _isFull()
+	private void _isFull()
 	{
-		if(this._combinations.size() < this._chancesCount)
-			return false;
-		return true;
+		if(this._combinations.size() >= this.getChancesCount())
+			this.setStatus(Status.FULL);
 	}
 	private void _addCombination(Combination combination)
 	{
 		this._combinations.add(combination);
-
-		if(this._isFull())
-			this.setStatus(Status.FULL);
+		this._isFull();
 	}	
-	private void _adjustDifficulty(Difficulty difficulty)
-	{
-		this._difficulty = difficulty;
-		
-		switch(difficulty)
-		{
-			case EASY:
-				this._codeLength = 3;
-				this._chancesCount = 14;
-				this._colorsCount = 5;
-				this._allowDoubleColorsInCode = false;
-				break;
-			case MEDIUM:
-				this._codeLength = 4;
-				this._chancesCount = 12;
-				this._colorsCount = 6;
-				this._allowDoubleColorsInCode = false;
-				break;
-			case HARD:
-				this._codeLength = 4;
-				this._chancesCount = 10;
-				this._colorsCount = 7;
-				this._allowDoubleColorsInCode = true;
-				break;
-			case IMPOSSIBLE:
-				this._codeLength = 5;
-				this._chancesCount = 8;
-				this._colorsCount = 8;
-				this._allowDoubleColorsInCode = true;
-				break;
-		}
-	}
 }

@@ -24,7 +24,7 @@ import mastermind.controller.GameController;
 import mastermind.model.Database;
 import mastermind.model.Game;
 import mastermind.view.BoardPanel;
-import mastermind.view.MastermindFrame;
+import mastermind.view.GameFrame;
 
 public class Main
 {
@@ -41,7 +41,7 @@ public class Main
 		Game model = new Game(db);
 		
 		//Views
-        MastermindFrame viewMastermind = new MastermindFrame();
+        GameFrame viewMastermind = new GameFrame();
         BoardPanel viewBoard = new BoardPanel(model);
         
         //Controllers (Pointer remains on the event thread)

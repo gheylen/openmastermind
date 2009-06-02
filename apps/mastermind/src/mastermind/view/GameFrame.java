@@ -31,7 +31,7 @@ import mastermind.model.game.Difficulty;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 
-public class MastermindFrame extends DraggableFrame
+public class GameFrame extends DraggableFrame
 {
 	private JPanel _contentPanel;
 	private JPanel _headPanel;
@@ -43,7 +43,7 @@ public class MastermindFrame extends DraggableFrame
 	private ImageButton _diffHardButton;
 	private ImageButton _diffImpossibleButton;
 	
-	public MastermindFrame()
+	public GameFrame()
 	{		
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setUndecorated(true);
