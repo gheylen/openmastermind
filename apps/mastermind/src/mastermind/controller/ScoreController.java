@@ -51,6 +51,7 @@ public class ScoreController
 		{
 			if(((ImageButton)e.getSource()).getUniqueName() == "ok")
 			{
+				//Reset from "SHOWING_SCORE" to "WON" (to activate restart buttons)
 				_mastermind.setStatus(Status.WON);
 				_view.dispose();
 			}

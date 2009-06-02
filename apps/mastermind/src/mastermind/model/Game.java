@@ -23,9 +23,6 @@ import java.util.Date;
 import mastermind.model.game.Difficulty;
 import mastermind.model.game.Status;
 
-/****
- 	* Model Mastermind
-****/
 public final class Game
 {
 	private Score _lastScore;
