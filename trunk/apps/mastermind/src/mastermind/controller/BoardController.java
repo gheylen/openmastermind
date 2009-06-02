@@ -48,44 +48,45 @@ public class BoardController
 		public void mouseExited(MouseEvent e) { }
 		public void mousePressed(MouseEvent e)
 		{
+			//Game should be in the PLAYING status when there is interacting with the mouse
 			if(_mastermind.getStatus() != Status.PLAYING)
 				return;
 			
+			//Check whether the current combination is being clicked. Return early if it isn't
 			int mTriggeredXLoc = _view.getLocationCombination((byte)(_mastermind.getCommittedCombos()));
 			if(e.getX() < mTriggeredXLoc || e.getX() > mTriggeredXLoc + _view.getWidthPeg())
 				return;
 			
+			//Check whether the user wants to cycle through or commit the current combination
 			if(e.getButton() == MouseEvent.BUTTON3)
 			{
-				_mastermind.commitCurrentCombo();
-				
-				if(_mastermind.getStatus() == Status.WON)
-				{
-					_mastermind.setStatus(Status.SHOWING_SCORE);
+					_mastermind.commitCurrentCombo();
+					_view.repaint();
 					
-					Score mScore = new Score(_mastermind.getDifficulty(), null);
-					mScore.calcScore(_mastermind.getElapsedMs(), _mastermind.getCommittedCombos(), _mastermind.getChancesCount());
-					
-					_mastermind.setLastScore(mScore);
-					
-					ScoreFrame frame = new ScoreFrame(_mastermind);
-					frame.setVisible(true);
-				}
-				
-				_view.repaint();
+					if(_mastermind.getStatus() == Status.WON)
+					{
+						_mastermind.setStatus(Status.SHOWING_SCORE);
+						
+						Score mScore = new Score(_mastermind.getDifficulty(), null);
+						mScore.calcScore(_mastermind.getElapsedMs(), _mastermind.getCommittedCombos(), _mastermind.getChancesCount());
+						
+						_mastermind.setLastScore(mScore);
+						
+						ScoreFrame frame = new ScoreFrame(_mastermind);
+						frame.setVisible(true);
+					}
 			}
 			else if(e.getButton() == MouseEvent.BUTTON1)
 				for(byte i = 1; i < _mastermind.getCodeLength() + 1; i++)
 				{
+					//Find out which peg was clicked upon
 					int mTriggeredYLoc = _view.getLocationPeg(i);
 					if(e.getY() > mTriggeredYLoc && e.getY() < mTriggeredYLoc + _view.getHeightPeg())
 					{
 						_mastermind.updateCurrentCombo((byte)(i - 1));
 						_view.repaint();
-						return;
 					}
 				}
-			
 		}
 		public void mouseReleased(MouseEvent e) { }
 	}

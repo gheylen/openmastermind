@@ -124,19 +124,12 @@ public final class Mastermind
 	}
 	public void commitCurrentCombo()
 	{
-		if(this.getStatus() != Status.PLAYING)
-			return;
-		
-		if(!this._addCombination(this._currentCombo))
-			this.setStatus(Status.ERROR);
+		this._addCombination(this._currentCombo);
 		
 		if(Combination.analyzeResults(this._winningCombo.compareTo(this._combinations.get(this.getCommittedCombos() - 1)), this.getCodeLength()))
 			this.setStatus(Status.WON);
 		else
 			this._currentCombo = Combination.factory(this._codeLength, (byte)1);
-		
-		if(this._isFull())
-			this.setStatus(Status.FULL);
 	}
 	public void restart(Difficulty difficulty)
 	{
@@ -149,38 +142,25 @@ public final class Mastermind
 	}
 	public void updateCurrentCombo(byte pegId)
 	{
-		if(this.getStatus() != Status.PLAYING)
-			return;
-		
-		if(pegId >= this._codeLength)
-			return;
-		
-		byte mPeg = this._currentCombo.getPeg(pegId);
-		if(mPeg >= this._colorsCount)
-			this._currentCombo.setPeg(pegId, (byte)1);
-		else
-			this._currentCombo.setPeg(pegId, (byte)(mPeg + 1));
+		this._currentCombo.cyclePeg(pegId, this._colorsCount);
 	}
-	
 	public void setStatus(Status status)
 	{
 		this._status = status;
 	}
+	
 	private boolean _isFull()
 	{
 		if(this._combinations.size() < this._chancesCount)
 			return false;
 		return true;
 	}
-	private boolean _addCombination(Combination combination)
+	private void _addCombination(Combination combination)
 	{
-		if(this._isFull())
-			return false;
-		if(combination.getLength() != this._winningCombo.getLength())
-			return false;
-		
 		this._combinations.add(combination);
-		return true;
+
+		if(this._isFull())
+			this.setStatus(Status.FULL);
 	}	
 	private void _adjustDifficulty(Difficulty difficulty)
 	{

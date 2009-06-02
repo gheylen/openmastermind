@@ -22,9 +22,13 @@ import java.util.HashSet;
 import java.util.Random;
 import mastermind.model.combination.Result;
 
-/****
-	* Model Combination
-****/
+/**
+ * Works with bytes:
+ * 		Will never have a board bigger than 256;
+ * 		Will never have a code bigger than 256;
+ * 		Will never have more different colors in the code than 256.
+ * 
+ */
 public class Combination
 {
 	private byte[] _pegs;
