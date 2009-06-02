@@ -15,14 +15,14 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package core;
+package app.mastermind.model;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import core.db.MastermindDb;
-import enums.Difficulty;
-import enums.MastermindStatus;
+import app.mastermind.Difficulty;
+import app.mastermind.Status;
+import app.mastermind.model.db.MastermindDb;
 
 /****
  	* Model Mastermind
@@ -39,7 +39,7 @@ public final class Mastermind
 	private byte _colorsCount;
 	private boolean _allowDoubleColorsInCode;
 	private Difficulty _difficulty;
-	private MastermindStatus _status;
+	private Status _status;
 	private MastermindDb _db;
 	
 	public Mastermind(MastermindDb db)
@@ -82,7 +82,7 @@ public final class Mastermind
 	{
 		return this._currentCombo;
 	}
-	public MastermindStatus getStatus()
+	public Status getStatus()
 	{
 		return this._status;
 	}
@@ -124,19 +124,19 @@ public final class Mastermind
 	}
 	public void commitCurrentCombo()
 	{
-		if(this.getStatus() != MastermindStatus.PLAYING)
+		if(this.getStatus() != Status.PLAYING)
 			return;
 		
 		if(!this._addCombination(this._currentCombo))
-			this.setStatus(MastermindStatus.ERROR);
+			this.setStatus(Status.ERROR);
 		
 		if(Combination.analyzeResults(this._winningCombo.compareTo(this._combinations.get(this.getCommittedCombos() - 1)), this.getCodeLength()))
-			this.setStatus(MastermindStatus.WON);
+			this.setStatus(Status.WON);
 		else
 			this._currentCombo = Combination.factory(this._codeLength, (byte)1);
 		
 		if(this._isFull())
-			this.setStatus(MastermindStatus.FULL);
+			this.setStatus(Status.FULL);
 	}
 	public void restart(Difficulty difficulty)
 	{
@@ -145,11 +145,11 @@ public final class Mastermind
 		this._winningCombo = Combination.getRandom(this._codeLength, this._colorsCount, this._allowDoubleColorsInCode);
 		this._currentCombo = Combination.factory(this._codeLength, (byte)1);
 		this._startTime = new Date();
-		this.setStatus(MastermindStatus.PLAYING);
+		this.setStatus(Status.PLAYING);
 	}
 	public void updateCurrentCombo(byte pegId)
 	{
-		if(this.getStatus() != MastermindStatus.PLAYING)
+		if(this.getStatus() != Status.PLAYING)
 			return;
 		
 		if(pegId >= this._codeLength)
@@ -162,7 +162,7 @@ public final class Mastermind
 			this._currentCombo.setPeg(pegId, (byte)(mPeg + 1));
 	}
 	
-	public void setStatus(MastermindStatus status)
+	public void setStatus(Status status)
 	{
 		this._status = status;
 	}

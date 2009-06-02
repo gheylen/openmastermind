@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package ui;
+package app.mastermind.view;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -25,13 +25,13 @@ import java.awt.Point;
 import java.awt.RenderingHints;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
-import core.Combination;
-import core.Mastermind;
+import app.mastermind.Status;
+import app.mastermind.model.Combination;
+import app.mastermind.model.Mastermind;
+import app.mastermind.model.combination.Result;
 import java.awt.event.MouseListener;
 import lib.collection.bag.CycleBag;
 import lib.jar.ResourceLocater;
-import enums.CombResultCode;
-import enums.MastermindStatus;
 
 public class BoardPanel extends JPanel
 {
@@ -91,7 +91,7 @@ public class BoardPanel extends JPanel
 	    	Combination mBufferedComb;
 	    	if(i < this._mastermind.getCommittedCombos())
 	    		mBufferedComb = this._mastermind.getCombination(i);
-    		else if(!mCurrCodeDrawn && this._mastermind.getStatus() == MastermindStatus.PLAYING)
+    		else if(!mCurrCodeDrawn && this._mastermind.getStatus() == Status.PLAYING)
 			{
     			mBufferedComb = this._mastermind.getCurrentCombo();
     			mCurrCodeDrawn = true;
@@ -104,7 +104,7 @@ public class BoardPanel extends JPanel
 	    }
 	    
 	    //(4) Draw hidden code
-	    if(this._mastermind.getStatus() == MastermindStatus.PLAYING)
+	    if(this._mastermind.getStatus() == Status.PLAYING)
 	    	this._drawSecretCodeCover(g);
 	    else
 	    	for(byte l = 0; l < this._mastermind.getCodeLength(); l++) 	
@@ -117,13 +117,13 @@ public class BoardPanel extends JPanel
 		CycleBag mResults = combination.compareTo(this._mastermind.getWinningCombination());
 		for(byte j = 0; j < this._mastermind.getCodeLength(); j++)
 		{
-			CombResultCode mResultCode;
+			Result mResultCode;
 			Image mImage;
 			
 			if(mResults == null || j >= mResults.getSize() || currCodeDrawn)
-				mResultCode = CombResultCode.EMPTY;
+				mResultCode = Result.EMPTY;
 			else
-				mResultCode = (CombResultCode) mResults.pop();
+				mResultCode = (Result) mResults.pop();
 			
 			switch(mResultCode)
 			{

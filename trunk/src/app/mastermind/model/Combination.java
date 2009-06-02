@@ -15,12 +15,12 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package core;
+package app.mastermind.model;
 
 import java.util.HashSet;
 import java.util.Random;
+import app.mastermind.model.combination.Result;
 import lib.collection.bag.CycleBag;
-import enums.CombResultCode;
 
 /****
 	* Model Combination
@@ -74,7 +74,7 @@ public class Combination
 		for(byte i = 0; i < this.getLength(); i++)
 			if(this.getPeg(i) == combination.getPeg(i))
 			{
-				mResults.push(CombResultCode.CORRECT);
+				mResults.push(Result.CORRECT);
 				mFlaggedComboData.add(i);
 				mFlaggedWinningData.add(i);
 			}
@@ -91,7 +91,7 @@ public class Combination
 					if(mFlaggedWinningData.contains(j))
 						continue;
 					
-					mResults.push(CombResultCode.FOUND);
+					mResults.push(Result.FOUND);
 					mFlaggedWinningData.add(j);
 					break;
 				}
@@ -114,7 +114,7 @@ public class Combination
 			return false;
 		
 		for(byte i = 0; i < results.getSize(); i++)
-			if(results.pop() != CombResultCode.CORRECT)
+			if(results.pop() != Result.CORRECT)
 				return false;
 		
 		return true;

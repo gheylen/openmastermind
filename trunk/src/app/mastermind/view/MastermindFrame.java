@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with openMastermind.  If not, see <http://www.gnu.org/licenses/>.*/
 
-package ui;
+package app.mastermind.view;
 
 import java.awt.BorderLayout;
 import javax.swing.JFrame;
@@ -27,7 +27,7 @@ import lib.component.ImageButton;
 import lib.component.ImagePanel;
 import lib.jar.ResourceLocater;
 import javax.swing.border.MatteBorder;
-import enums.Difficulty;
+import app.mastermind.Difficulty;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 
