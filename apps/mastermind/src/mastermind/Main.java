@@ -1,3 +1,4 @@
+package mastermind;
 /*  openMastermind Copyright (c) 2008 Glenn Heylen
 
 	This file is part of openMastermind.

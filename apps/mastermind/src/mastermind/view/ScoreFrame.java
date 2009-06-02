@@ -146,15 +146,15 @@ public class ScoreFrame extends DraggableFrame
 			this.uxPanelSouth.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 			this._contentPanel.add(uxPanelSouth, BorderLayout.SOUTH);
 			{
-				this._btnOk = new ImageButton(ResourceLocater.getImage("/res/img/ok.png"), "ok");
-				this._btnOk.setHoverIcon(ResourceLocater.getImage("/res/img/okHover.png"));
-				this._btnOk.setPressedIcon(ResourceLocater.getImage("/res/img/okClick.png"));
+				this._btnOk = new ImageButton(ResourceLocater.getImage("/mastermind/res/img/ok.png"), "ok");
+				this._btnOk.setHoverIcon(ResourceLocater.getImage("/mastermind/res/img/okHover.png"));
+				this._btnOk.setPressedIcon(ResourceLocater.getImage("/mastermind/res/img/okClick.png"));
 				this.uxPanelSouth.add(_btnOk);
 			}
 			{
-				this._btnHighscore = new ImageButton(ResourceLocater.getImage("/res/img/highscores.png"));
-				this._btnHighscore.setHoverIcon(ResourceLocater.getImage("/res/img/highscoresHover.png"));
-				this._btnHighscore.setPressedIcon(ResourceLocater.getImage("/res/img/highscoresClick.png"));
+				this._btnHighscore = new ImageButton(ResourceLocater.getImage("/mastermind/res/img/highscores.png"));
+				this._btnHighscore.setHoverIcon(ResourceLocater.getImage("/mastermind/res/img/highscoresHover.png"));
+				this._btnHighscore.setPressedIcon(ResourceLocater.getImage("/mastermind/res/img/highscoresClick.png"));
 				this.uxPanelSouth.add(_btnHighscore);
 			}
 		}
@@ -272,7 +272,7 @@ public class ScoreFrame extends DraggableFrame
 			}
 		}
 		{
-			this._pnlLogo = new ImagePanel(ResourceLocater.getImage("/res/img/headerSmall.png"));
+			this._pnlLogo = new ImagePanel(ResourceLocater.getImage("/mastermind/res/img/headerSmall.png"));
 			this._pnlLogo.setFitWidth(this.getWidth());
 			this._contentPanel.add(this._pnlLogo , BorderLayout.NORTH);
 		}

@@ -158,27 +158,27 @@ public class HighscoreFrame extends DraggableFrame
 			this._pnDiffs.setBackground(new Color(153, 102, 51));
 			this._pnlContent.add(this._pnDiffs, BorderLayout.NORTH);
 			{
-				this._btnDiffEasy = new ImageButton(ResourceLocater.getImage("/res/img/diffEasy.png"), "easy");
-				this._btnDiffEasy.setHoverIcon(ResourceLocater.getImage("/res/img/diffEasyHover.png"));
-				this._btnDiffEasy.setPressedIcon(ResourceLocater.getImage("/res/img/diffEasyClick.png"));
+				this._btnDiffEasy = new ImageButton(ResourceLocater.getImage("/mastermind/res/img/diffEasy.png"), "easy");
+				this._btnDiffEasy.setHoverIcon(ResourceLocater.getImage("/mastermind/res/img/diffEasyHover.png"));
+				this._btnDiffEasy.setPressedIcon(ResourceLocater.getImage("/mastermind/res/img/diffEasyClick.png"));
 				this._pnDiffs.add(this._btnDiffEasy);
 			}
 			{
-				this._btnDiffMedium = new ImageButton(ResourceLocater.getImage("/res/img/diffMedium.png"), "medium");
-				this._btnDiffMedium.setHoverIcon(ResourceLocater.getImage("/res/img/diffMediumHover.png"));
-				this._btnDiffMedium.setPressedIcon(ResourceLocater.getImage("/res/img/diffMediumClick.png"));
+				this._btnDiffMedium = new ImageButton(ResourceLocater.getImage("/mastermind/res/img/diffMedium.png"), "medium");
+				this._btnDiffMedium.setHoverIcon(ResourceLocater.getImage("/mastermind/res/img/diffMediumHover.png"));
+				this._btnDiffMedium.setPressedIcon(ResourceLocater.getImage("/mastermind/res/img/diffMediumClick.png"));
 				this._pnDiffs.add(this._btnDiffMedium);
 			}
 			{
-				this._btnDiffHard = new ImageButton(ResourceLocater.getImage("/res/img/diffHard.png"), "hard");
-				this._btnDiffHard.setHoverIcon(ResourceLocater.getImage("/res/img/diffHardHover.png"));
-				this._btnDiffHard.setPressedIcon(ResourceLocater.getImage("/res/img/diffHardClick.png"));
+				this._btnDiffHard = new ImageButton(ResourceLocater.getImage("/mastermind/res/img/diffHard.png"), "hard");
+				this._btnDiffHard.setHoverIcon(ResourceLocater.getImage("/mastermind/res/img/diffHardHover.png"));
+				this._btnDiffHard.setPressedIcon(ResourceLocater.getImage("/mastermind/res/img/diffHardClick.png"));
 				this._pnDiffs.add(this._btnDiffHard);
 			}
 			{
-				this._btnDiffImpossible = new ImageButton(ResourceLocater.getImage("/res/img/diffImpossible.png"), "impossible");
-				this._btnDiffImpossible.setHoverIcon(ResourceLocater.getImage("/res/img/diffImpossibleHover.png"));
-				this._btnDiffImpossible.setPressedIcon(ResourceLocater.getImage("/res/img/diffImpossibleClick.png"));
+				this._btnDiffImpossible = new ImageButton(ResourceLocater.getImage("/mastermind/res/img/diffImpossible.png"), "impossible");
+				this._btnDiffImpossible.setHoverIcon(ResourceLocater.getImage("/mastermind/res/img/diffImpossibleHover.png"));
+				this._btnDiffImpossible.setPressedIcon(ResourceLocater.getImage("/mastermind/res/img/diffImpossibleClick.png"));
 				this._pnDiffs.add(this._btnDiffImpossible);
 			}
 		}
@@ -223,9 +223,9 @@ public class HighscoreFrame extends DraggableFrame
 			this._pnlControls.setBackground(new Color(153, 102, 51));
 			this._pnlContent.add(this._pnlControls, BorderLayout.SOUTH);
 			{
-				this._btnOk = new ImageButton(ResourceLocater.getImage("/res/img/ok.png"));
-				this._btnOk.setHoverIcon(ResourceLocater.getImage("/res/img/okHover.png"));
-				this._btnOk.setPressedIcon(ResourceLocater.getImage("/res/img/okClick.png"));
+				this._btnOk = new ImageButton(ResourceLocater.getImage("/mastermind/res/img/ok.png"));
+				this._btnOk.setHoverIcon(ResourceLocater.getImage("/mastermind/res/img/okHover.png"));
+				this._btnOk.setPressedIcon(ResourceLocater.getImage("/mastermind/res/img/okClick.png"));
 				this._pnlControls.add(this._btnOk);
 			}
 		}

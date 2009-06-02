@@ -128,11 +128,11 @@ public class BoardPanel extends JPanel
 			switch(mResultCode)
 			{
 				case FOUND:
-					mImage = new ImageIcon(ResourceLocater.getImage("/res/img/pegWhite.png")).getImage(); break;
+					mImage = new ImageIcon(ResourceLocater.getImage("/mastermind/res/img/pegWhite.png")).getImage(); break;
 				case CORRECT:
-					mImage = new ImageIcon(ResourceLocater.getImage("/res/img/pegBlack.png")).getImage(); break;
+					mImage = new ImageIcon(ResourceLocater.getImage("/mastermind/res/img/pegBlack.png")).getImage(); break;
 				default:
-					mImage = new ImageIcon(ResourceLocater.getImage("/res/img/pegEmpty.png")).getImage(); break;
+					mImage = new ImageIcon(ResourceLocater.getImage("/mastermind/res/img/pegEmpty.png")).getImage(); break;
 			}
 			
 			Point mPoint = this._getLocationResult(combinationIndex, j);
@@ -147,7 +147,7 @@ public class BoardPanel extends JPanel
     {
     	Image mImage;
     	
-	    mImage =  new ImageIcon(ResourceLocater.getImage("/res/img/coverSecretCode.png")).getImage();
+	    mImage =  new ImageIcon(ResourceLocater.getImage("/mastermind/res/img/coverSecretCode.png")).getImage();
 	    g.drawImage(mImage,
 	    		this.getLocationCombination(this._mastermind.getChancesCount()), 
 	    		this.getLocationPeg((byte)1),
@@ -162,23 +162,23 @@ public class BoardPanel extends JPanel
 		switch(color)
 		{
 			case 1:
-				mImage = new ImageIcon(ResourceLocater.getImage("/res/img/pegBlue.png")).getImage(); break;
+				mImage = new ImageIcon(ResourceLocater.getImage("/mastermind/res/img/pegBlue.png")).getImage(); break;
 			case 2:
-				mImage = new ImageIcon(ResourceLocater.getImage("/res/img/pegGreen.png")).getImage(); break;
+				mImage = new ImageIcon(ResourceLocater.getImage("/mastermind/res/img/pegGreen.png")).getImage(); break;
 			case 3:
-				mImage = new ImageIcon(ResourceLocater.getImage("/res/img/pegRed.png")).getImage(); break;
+				mImage = new ImageIcon(ResourceLocater.getImage("/mastermind/res/img/pegRed.png")).getImage(); break;
 			case 4:
-				mImage = new ImageIcon(ResourceLocater.getImage("/res/img/pegYellow.png")).getImage(); break;
+				mImage = new ImageIcon(ResourceLocater.getImage("/mastermind/res/img/pegYellow.png")).getImage(); break;
 			case 5:
-				mImage = new ImageIcon(ResourceLocater.getImage("/res/img/pegBlack.png")).getImage(); break;
+				mImage = new ImageIcon(ResourceLocater.getImage("/mastermind/res/img/pegBlack.png")).getImage(); break;
 			case 6:
-				mImage = new ImageIcon(ResourceLocater.getImage("/res/img/pegWhite.png")).getImage(); break;
+				mImage = new ImageIcon(ResourceLocater.getImage("/mastermind/res/img/pegWhite.png")).getImage(); break;
 			case 7:
-				mImage = new ImageIcon(ResourceLocater.getImage("/res/img/pegPurple.png")).getImage(); break;
+				mImage = new ImageIcon(ResourceLocater.getImage("/mastermind/res/img/pegPurple.png")).getImage(); break;
 			case 8:
-				mImage = new ImageIcon(ResourceLocater.getImage("/res/img/pegGrey.png")).getImage(); break;
+				mImage = new ImageIcon(ResourceLocater.getImage("/mastermind/res/img/pegGrey.png")).getImage(); break;
 			default:
-				mImage = new ImageIcon(ResourceLocater.getImage("/res/img/pegEmpty.png")).getImage(); break;
+				mImage = new ImageIcon(ResourceLocater.getImage("/mastermind/res/img/pegEmpty.png")).getImage(); break;
 		}
 		
 		g.drawImage(mImage, this.getLocationCombination(comb), this.getLocationPeg(peg), this.getWidthPeg(), this.getHeightPeg(), null);

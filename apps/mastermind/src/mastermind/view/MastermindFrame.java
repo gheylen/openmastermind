@@ -60,8 +60,8 @@ public class MastermindFrame extends DraggableFrame
 		this._headPanel.setPreferredSize(new Dimension(0, 110));
 		this._contentPanel.add(this._headPanel , BorderLayout.NORTH);
 		
-		this._logoPanel = new ImagePanel(ResourceLocater.getImage("/res/img/headerBig.png"));
-		this._logoPanel.setImgHover(ResourceLocater.getImage("/res/img/headerBigHover.png"));
+		this._logoPanel = new ImagePanel(ResourceLocater.getImage("/mastermind/res/img/headerBig.png"));
+		this._logoPanel.setImgHover(ResourceLocater.getImage("/mastermind/res/img/headerBigHover.png"));
 		this._logoPanel.setFitHeight(110);
 		this._headPanel.add(this._logoPanel, BorderLayout.WEST);
 		
@@ -70,29 +70,29 @@ public class MastermindFrame extends DraggableFrame
 		this._controlPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		this._headPanel.add(this._controlPanel, BorderLayout.CENTER);
 		
-		this._diffEasyButton = new ImageButton(ResourceLocater.getImage("/res/img/diffEasy.png"), "easy");
-		this._diffEasyButton.setPressedIcon(ResourceLocater.getImage("/res/img/diffEasyClick.png"));
-		this._diffEasyButton.setHoverIcon(ResourceLocater.getImage("/res/img/diffEasyHover.png"));
+		this._diffEasyButton = new ImageButton(ResourceLocater.getImage("/mastermind/res/img/diffEasy.png"), "easy");
+		this._diffEasyButton.setPressedIcon(ResourceLocater.getImage("/mastermind/res/img/diffEasyClick.png"));
+		this._diffEasyButton.setHoverIcon(ResourceLocater.getImage("/mastermind/res/img/diffEasyHover.png"));
 		this._controlPanel.add(this._diffEasyButton);
 		
-		this._diffMediumButton = new ImageButton(ResourceLocater.getImage("/res/img/diffMedium.png"), "medium");
-		this._diffMediumButton.setPressedIcon(ResourceLocater.getImage("/res/img/diffMediumClick.png"));
-		this._diffMediumButton.setHoverIcon(ResourceLocater.getImage("/res/img/diffMediumHover.png"));
+		this._diffMediumButton = new ImageButton(ResourceLocater.getImage("/mastermind/res/img/diffMedium.png"), "medium");
+		this._diffMediumButton.setPressedIcon(ResourceLocater.getImage("/mastermind/res/img/diffMediumClick.png"));
+		this._diffMediumButton.setHoverIcon(ResourceLocater.getImage("/mastermind/res/img/diffMediumHover.png"));
 		this._controlPanel.add(this._diffMediumButton);
 		
-		this._diffHardButton = new ImageButton(ResourceLocater.getImage("/res/img/diffHard.png"), "hard");
-		this._diffHardButton.setPressedIcon(ResourceLocater.getImage("/res/img/diffHardClick.png"));
-		this._diffHardButton.setHoverIcon(ResourceLocater.getImage("/res/img/diffHardHover.png"));
+		this._diffHardButton = new ImageButton(ResourceLocater.getImage("/mastermind/res/img/diffHard.png"), "hard");
+		this._diffHardButton.setPressedIcon(ResourceLocater.getImage("/mastermind/res/img/diffHardClick.png"));
+		this._diffHardButton.setHoverIcon(ResourceLocater.getImage("/mastermind/res/img/diffHardHover.png"));
 		this._controlPanel.add(this._diffHardButton);
 		
-		this._diffImpossibleButton = new ImageButton(ResourceLocater.getImage("/res/img/diffImpossible.png"), "impossible");
-		this._diffImpossibleButton.setPressedIcon(ResourceLocater.getImage("/res/img/diffImpossibleClick.png"));
-		this._diffImpossibleButton.setHoverIcon(ResourceLocater.getImage("/res/img/diffImpossibleHover.png"));
+		this._diffImpossibleButton = new ImageButton(ResourceLocater.getImage("/mastermind/res/img/diffImpossible.png"), "impossible");
+		this._diffImpossibleButton.setPressedIcon(ResourceLocater.getImage("/mastermind/res/img/diffImpossibleClick.png"));
+		this._diffImpossibleButton.setHoverIcon(ResourceLocater.getImage("/mastermind/res/img/diffImpossibleHover.png"));
 		this._controlPanel.add(this._diffImpossibleButton);
 		
-		this._exitButton = new ImageButton(ResourceLocater.getImage("/res/img/exit.png"));
-		this._exitButton.setPressedIcon(ResourceLocater.getImage("/res/img/exitClick.png"));
-		this._exitButton.setHoverIcon(ResourceLocater.getImage("/res/img/exitHover.png"));
+		this._exitButton = new ImageButton(ResourceLocater.getImage("/mastermind/res/img/exit.png"));
+		this._exitButton.setPressedIcon(ResourceLocater.getImage("/mastermind/res/img/exitClick.png"));
+		this._exitButton.setHoverIcon(ResourceLocater.getImage("/mastermind/res/img/exitHover.png"));
 		this._controlPanel.add(this._exitButton);
 		
 		this.setMiddleScreen();
