@@ -18,7 +18,6 @@ package mastermind;
 
 import gheylenlib.jar.ResourceLocater;
 import java.io.File;
-import java.sql.SQLException;
 import mastermind.controller.BoardController;
 import mastermind.controller.GameController;
 import mastermind.model.Database;
@@ -53,7 +52,7 @@ public class Main
         viewMastermind.setVisible(true);		
 	}
 	
-	public static void main(String[] args) throws SQLException
+	public static void main(String[] args)
 	{
 		Main main = new Main();
 		
