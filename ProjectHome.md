@@ -1,0 +1,1 @@
+This is a very easy to use and good looking implementation of Mastermind without the giant overhead of useless features.
